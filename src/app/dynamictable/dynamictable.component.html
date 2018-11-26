@@ -1,0 +1,35 @@
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item">
+      <span> Table</span><br>
+      <ng-dynamic-Table [options]=table (changeEvent)="receiveRowValue($event)"></ng-dynamic-Table>
+    </li>
+    <li class="list-group-item">
+      <span> Table with footer</span><br>
+      <ng-dynamic-Table [options]=tableWithFooter (changeEvent)="receiveRowValue($event)"></ng-dynamic-Table>
+    </li>
+    <li class="list-group-item">
+      <span> table with default sorting and sort by multiple columns name</span><br>
+      <ng-dynamic-Table [options]=tableWithSoorting (changeEvent)="receiveRowValue($event)"></ng-dynamic-Table>
+    </li>
+    <li class="list-group-item">
+      <span> Table with search and search by firstname with default placeholder ,default message if the record not
+        found</span><br>
+      <ng-dynamic-Table [options]=tableWithSearching (changeEvent)="receiveRowValue($event)"></ng-dynamic-Table>
+    </li>
+    <li class="list-group-item">
+      <span> Table with search and search more than one field with given placeholder ,given message if the record not
+        found</span><br>
+
+      <ng-dynamic-Table [options]=tableWithSearchingbyMultipleName (changeEvent)="receiveRowValue($event)"></ng-dynamic-Table>
+    </li>
+    <li class="list-group-item">
+      <span>
+        table with pagination
+
+      </span><br>
+      <ng-dynamic-Table [options]=options (changeEvent)="receiveRowValue($event)"></ng-dynamic-Table>
+    </li>
+
+  </ul>
+</div>

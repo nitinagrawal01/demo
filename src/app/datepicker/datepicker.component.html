@@ -1,0 +1,39 @@
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item">
+      <span>Datepicker with (mm dd, yy) format with first day 0 (sun),with min and max date,with month skip one</span><br>
+      <input type="text" [option]=datePickerWithMmDdFormat (eventDate)="receiveDate($event)" appMydatepicker>
+    </li>
+    <li class="list-group-item">
+      <span>Datepicker with (dd mm, yy) format with first day 1 (mon) ,min date current date max 5 month one weak from
+        current date with button panel</span><br>
+      <input type="text" [option]=datePickerWithDdMmFormat (eventDate)="receiveDate($event)" appMydatepicker>
+    </li>
+    <li class="list-group-item">
+      <span>Datepicker with weak,month or year dropdown ,years range,with hide prev and next if month disable,skip two
+        month </span><br>
+      <input type="text" [option]=datePickerWithWeak (eventDate)="receiveDate($event)" appMydatepicker>
+    </li>
+    <li class="list-group-item">
+      <span>Datepicker with animation fast,fadeIn,show next or prev later or earlier name </span><br>
+      <input type="text" [option]=datePickerWithanimation (eventDate)="receiveDate($event)" appMydatepicker>
+    </li>
+    <li class="list-group-item">
+      <span>Datepicker with other month date,select that date,show the month before year,suffix on title bar
+      </span><br>
+      <input type="text" [option]=selectAndShowOtherMonthDate (eventDate)="receiveDate($event)" appMydatepicker>
+    </li>
+    <li class="list-group-item">
+      <span> Datepicker with the icon and image on the icon</span><br>
+      <input type="text" [option]=datePickerWithIconAndImage (eventDate)="receiveDate($event)" appMydatepicker>
+    </li>
+    <li class="list-group-item">
+      <span> Datepicker with text on icon,show more than onw month with position of current month</span>&nbsp;
+      <input type="text" [option]=numberOfMonthDisplayButtonIconText (eventDate)="receiveDate($event)" appMydatepicker>
+    </li>
+    <li class="list-group-item">
+      <span>Datepicker with right to left show</span><br>
+      <input type="text" [option]=options (eventDate)="receiveDate($event)" appMydatepicker>
+    </li>
+  </ul>
+</div>

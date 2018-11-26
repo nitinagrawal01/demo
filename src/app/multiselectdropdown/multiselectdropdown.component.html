@@ -1,0 +1,35 @@
+<div class="container">
+  <ul class="list-group">
+
+
+    <li class="list-group-item">
+      <Span> Multiselect with default button name</Span><br>
+      <ng-multi-select-dropdown [option]=simpleMultiSelect (messageEvent)='onItemSelect($event)'>
+      </ng-multi-select-dropdown>
+    </li>
+    <li class="list-group-item">
+      <span>
+        Multiselect with filter with select all or unselect all
+      </span><br>
+      <ng-multi-select-dropdown [option]=MultiSelectFilter (messageEvent)='onItemSelect($event)'>
+      </ng-multi-select-dropdown>
+    </li>
+    <li class="list-group-item">
+      <span>
+        Multiselect as a single select given placeholder name
+
+      </span><br>
+      <ng-multi-select-dropdown [option]=multiselectAsSingleSelect (messageEvent)='onItemSelect($event)'>
+      </ng-multi-select-dropdown>
+    </li>
+    <li class="list-group-item">
+      <span>
+        multiselect with show items in the list
+      </span><br>
+
+      <ng-multi-select-dropdown [option]=options (messageEvent)='onItemSelect($event)'>
+      </ng-multi-select-dropdown>
+    </li>
+
+  </ul>
+</div>

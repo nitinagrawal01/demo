@@ -23,9 +23,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+               "node_modules/jquery-ui-1.12.1.custom/jquery-ui.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/jquery-ui-1.12.1.custom/external/jquery/jquery.js",
+              "node_modules/jquery-ui-1.12.1.custom/jquery-ui.min.js"
+            ]
           },
           "configurations": {
             "production": {
