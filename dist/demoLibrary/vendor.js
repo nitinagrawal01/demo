@@ -71577,7 +71577,8 @@ var CollapseComponent = /** @class */ (function () {
                       </div>
                     </div>
                   </ng-container>`,
-                    styles: [`.accordion {
+                    styles: [`
+                    .accordion {
                         background-color: #666;
                         color: rgb(27, 36, 218);
                         cursor: pointer;
@@ -71861,7 +71862,8 @@ var SearchboxComponent = /** @class */ (function () {
                         </tr>
                       </span>
                     </table>
-                    </div>`,
+                    </div>
+                    `,
                 styles: [`
                     
                     input {
@@ -71886,7 +71888,8 @@ var SearchboxComponent = /** @class */ (function () {
                     
                     tr {
                         background-color: #dddddd;
-                    }`]
+                    }
+                    `]
             },]
         },
     ];
