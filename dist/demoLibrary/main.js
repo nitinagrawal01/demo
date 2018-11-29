@@ -156,7 +156,7 @@ var AccordianComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* * {box-sizing: border-box;}\r\n\r\nbody { \r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: Arial, Helvetica, sans-serif;\r\n}\r\n\r\n.header {\r\n  overflow: hidden;\r\n  background-color: #f1f1f1;\r\n  padding: 20px 10px;\r\n}\r\n\r\n.header a {\r\n  float: left;\r\n  color: black;\r\n  text-align: center;\r\n  padding: 12px;\r\n  text-decoration: none;\r\n  font-size: 18px; \r\n  line-height: 25px;\r\n  border-radius: 4px;\r\n}\r\n\r\n\r\n\r\n.header a:hover  {\r\n  background-color: #ddd;\r\n  color: black;\r\n}\r\n\r\n.header a.active {\r\n  background-color: dodgerblue;\r\n  color: white;\r\n}\r\n\r\n.header-right {\r\n  float: right;\r\n}\r\n\r\n@media screen and (max-width: 500px) {\r\n  .header a {\r\n    float: none;\r\n    display: block;\r\n    text-align: left;\r\n  }\r\n  .header-right {\r\n    float: none;\r\n  }\r\n} */\r\n\r\ndiv{\r\n\r\nwidth: 100%;\r\nbackground-color: #53badc;\r\n\r\n}\r\n\r\n.btn {\r\n  border: none;\r\n  outline: none;\r\n  padding: 10px 16px;\r\n  background-color: #53badc;\r\n  cursor: pointer;\r\n}\r\n\r\n/* Style the active class (and buttons on mouse-over) */\r\n\r\n.active, .btn:hover {\r\n  background-color: #666;\r\n  color: white;\r\n}"
+module.exports = "\r\n\r\ndiv{\r\n\r\nwidth: 100%;\r\nbackground-color: #53badc;\r\n\r\n}\r\n\r\n.btn {\r\n  border: none;\r\n  outline: none;\r\n  padding: 10px 16px;\r\n  background-color: #53badc;\r\n  cursor: pointer;\r\n}\r\n\r\n/* Style the active class (and buttons on mouse-over) */\r\n\r\n.active, .btn:hover {\r\n  background-color: #666;\r\n  color: white;\r\n}"
 
 /***/ }),
 
