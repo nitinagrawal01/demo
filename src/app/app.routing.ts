@@ -11,7 +11,7 @@ import { DynamictableComponent } from './dynamictable/dynamictable.component';
 
 
 const routes: Routes = [
-    { path: '', redirectTo: '/autocompletesearch', pathMatch: 'full' },
+    { path: '', redirectTo: '/accordian', pathMatch: 'full' },
     { path: 'autocompletesearch', component: AutocompletesearchComponent },
     { path: 'accordian', component: AccordianComponent },
     { path: 'datepicker', component: DatepickerComponent },

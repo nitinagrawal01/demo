@@ -68,7 +68,7 @@ export class AutocompletesearchComponent implements OnInit {
     ];
 
     this.searchData = {
-      'searchBy': ['FirstName', 'LastName'], // this is for the search data by the filed name. 
+      'searchBy': ['FirstName', 'LastName'], // this is for the search data by the filed name.
       'displayBy': ['FirstName', 'LastName'], // this is for  the display the data when searched.
       'placeHolder': 'Firstname LastName',  // this is for the placeHolder of the search field.
       'noRecord': 'no record found', // this is message for for the no record found.
@@ -82,8 +82,8 @@ export class AutocompletesearchComponent implements OnInit {
     };
 
     this.searchByNameDisplayByName = {
-      'searchBy': ['FirstName'], // this is for the search data by the filed name. 
-      'displayBy': ['FirstName'], // this is for  the display the data when searched.
+      'searchBy': ['FirstName'], // this is for the search data by the filed name.
+      'displayBy': ['FirstName' ], // this is for  the display the data when searched.
       'placeHolder': '',  // this is for the placeHolder of the search field.
       'noRecord': '', // this is message for for the no record found.
       'highlightColour': '',  // this is for giving the highlight color.
