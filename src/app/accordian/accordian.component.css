@@ -4,4 +4,7 @@ span {
     text-align: left;
     display: block;
     background-color:#eee;
+    padding: 8px;
+    font-weight: 500;
+
 }

@@ -3,7 +3,7 @@
 div{
 
 width: 100%;
-background-color: #53badc;
+background-color:#3f51b5;
 
 }
 
@@ -11,12 +11,11 @@ background-color: #53badc;
   border: none;
   outline: none;
   padding: 10px 16px;
-  background-color: #53badc;
+  background-color:#3f51b5;
   cursor: pointer;
 }
 
 /* Style the active class (and buttons on mouse-over) */
 .active, .btn:hover {
-  background-color: #666;
   color: white;
 }

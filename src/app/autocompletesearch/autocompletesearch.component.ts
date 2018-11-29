@@ -45,7 +45,7 @@ export class AutocompletesearchComponent implements OnInit {
   };
   dataWithDefaultHighlightColor: {};
   displayWithDefaultHighLightColor: {
-  'searchBy': string[]; // this is for the search data by the filed name. 
+  'searchBy': string[]; // this is for the search data by the filed name.
     'displayBy': string[]; // this is for  the display the data when searched.
     'placeHolder': string; // this is for the placeHolder of the search field.
     'noRecord': string; // this is message for for the no record found.
@@ -64,7 +64,7 @@ export class AutocompletesearchComponent implements OnInit {
       { Id: 5, FirstName: 'RubberMan', LastName: 'Vance' },
       { Id: 6, FirstName: 'Dynama', LastName: 'Stevens' },
       { Id: 7, FirstName: 'Dr IQ', LastName: 'Bradshaw' },
-      { Id: 64, FirstName: 'Dynama', LastName: 'Kelly' },
+
     ];
 
     this.searchData = {

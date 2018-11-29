@@ -3,5 +3,7 @@ span {
     padding-bottom: 8px;
     text-align: left;
     display: block;
-    background-color:#eee
+    background-color: #eee;
+    font-weight: 500;
+    padding-left: 8px;
 }
