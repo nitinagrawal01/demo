@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    text-align: left;\r\n    display: block;\r\n    background-color:#eee;\r\n}\r\n"
+module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    text-align: left;\r\n    display: block;\r\n    background-color:#eee;\r\n    padding: 8px;\r\n    font-weight: 500;\r\n\r\n}\r\n"
 
 /***/ }),
 
@@ -156,7 +156,7 @@ var AccordianComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\ndiv{\r\n\r\nwidth: 100%;\r\nbackground-color: #53badc;\r\n\r\n}\r\n\r\n.btn {\r\n  border: none;\r\n  outline: none;\r\n  padding: 10px 16px;\r\n  background-color: #53badc;\r\n  cursor: pointer;\r\n}\r\n\r\n/* Style the active class (and buttons on mouse-over) */\r\n\r\n.active, .btn:hover {\r\n  background-color: #666;\r\n  color: white;\r\n}"
+module.exports = "\r\n\r\ndiv{\r\n\r\nwidth: 100%;\r\nbackground-color:#3f51b5;\r\n\r\n}\r\n\r\n.btn {\r\n  border: none;\r\n  outline: none;\r\n  padding: 10px 16px;\r\n  background-color:#3f51b5;\r\n  cursor: pointer;\r\n}\r\n\r\n/* Style the active class (and buttons on mouse-over) */\r\n\r\n.active, .btn:hover {\r\n  color: white;\r\n}"
 
 /***/ }),
 
@@ -167,7 +167,7 @@ module.exports = "\r\n\r\ndiv{\r\n\r\nwidth: 100%;\r\nbackground-color: #53badc;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"myDIV\">\n  <button class=\"btn active\" [routerLink]=\"['autocompletesearch']\">AUTO COMPLETE</button>\n  <button class=\"btn \" [routerLink]=\"['accordian']\">ACCORDIAN</button>\n  <button class=\"btn\" [routerLink]=\"['datepicker']\">DATEPICKER</button>\n  <button class=\"btn\" [routerLink]=\"['multi-single-selectdropdown']\"> DROP-DOWN</button>\n  <button class=\"btn\" [routerLink]=\"['table']\">TABLE</button>\n</div>\n\n<router-outlet></router-outlet>"
+module.exports = "<div id=\"myDIV\">\n  <button class=\"btn active\" [routerLink]=\"['accordian']\">ACCORDIAN</button>\n\n  <button class=\"btn\" [routerLink]=\"['datepicker']\">DATEPICKER</button>\n  <button class=\"btn\" [routerLink]=\"['autocompletesearch']\">AUTO COMPLETE</button>\n  <button class=\"btn\" [routerLink]=\"['multi-single-selectdropdown']\"> DROP-DOWN</button>\n  <button class=\"btn\" [routerLink]=\"['table']\">TABLE</button>\n</div>\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -328,7 +328,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 var routes = [
-    { path: '', redirectTo: '/autocompletesearch', pathMatch: 'full' },
+    { path: '', redirectTo: '/accordian', pathMatch: 'full' },
     { path: 'autocompletesearch', component: _autocompletesearch_autocompletesearch_component__WEBPACK_IMPORTED_MODULE_2__["AutocompletesearchComponent"] },
     { path: 'accordian', component: _accordian_accordian_component__WEBPACK_IMPORTED_MODULE_3__["AccordianComponent"] },
     { path: 'datepicker', component: _datepicker_datepicker_component__WEBPACK_IMPORTED_MODULE_4__["DatepickerComponent"] },
@@ -358,7 +358,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    text-align: left;\r\n    display: block;\r\n    background-color:#eee\r\n}"
+module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    text-align: left;\r\n    display: block;\r\n    background-color: #eee;\r\n    font-weight: 500;\r\n    padding-left: 8px;\r\n}"
 
 /***/ }),
 
@@ -369,7 +369,7 @@ module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <ul class=\"list-group\">\n\n    <li class=\"list-group-item\">\n      <span>Search by one field and display data by one field</span><br>\n      <ng-dynamic-autocompleteField [options]=dataByFirstNameDisplayByLastName (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n    </li>\n    <li class=\"list-group-item\">\n      <span> Search by multiple field,display multiple field data</span><br>\n      <ng-dynamic-autocompleteField [options]=dataByAllFieldAndSearchByallField (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n\n    </li>\n    <li class=\"list-group-item\">\n      <span>Search with default highlight color</span><br>\n      <ng-dynamic-autocompleteField [options]=dataWithDefaultHighlightColor (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n    </li>\n    <li class=\"list-group-item\">\n      <span>Search with given highlight color </span><br>\n      <ng-dynamic-autocompleteField [options]=options (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n    </li>\n  </ul>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">\n      <span>Search by one field and display data by two field</span><br>\n      <ng-dynamic-autocompleteField [options]=dataByFirstNameDisplayByLastName (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n    </li>\n     <li class=\"list-group-item\">\n      <span> Search by multiple field,display multiple field data</span><br>\n      <ng-dynamic-autocompleteField [options]=dataByAllFieldAndSearchByallField (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n\n    </li>\n    <li class=\"list-group-item\">\n      <span>Search with default highlight color</span><br>\n      <ng-dynamic-autocompleteField [options]=dataWithDefaultHighlightColor (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n    </li>\n    <li class=\"list-group-item\">\n      <span>Search with given highlight color </span><br>\n      <ng-dynamic-autocompleteField [options]=options (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n    </li> \n  </ul>\n</div>\n"
 
 /***/ }),
 
@@ -404,7 +404,6 @@ var AutocompletesearchComponent = /** @class */ (function () {
             { Id: 5, FirstName: 'RubberMan', LastName: 'Vance' },
             { Id: 6, FirstName: 'Dynama', LastName: 'Stevens' },
             { Id: 7, FirstName: 'Dr IQ', LastName: 'Bradshaw' },
-            { Id: 64, FirstName: 'Dynama', LastName: 'Kelly' },
         ];
         this.searchData = {
             'searchBy': ['FirstName', 'LastName'],
@@ -490,7 +489,7 @@ var AutocompletesearchComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    text-align: left;\r\n    display: block;\r\n    background-color:#eee\r\n}\r\n"
+module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    text-align: left;\r\n    display: block;\r\n    background-color: #eee;\r\n    font-weight: 500;\r\n    padding-left: 8px;\r\n}\r\n"
 
 /***/ }),
 
@@ -803,7 +802,7 @@ var DatepickerComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    text-align: left;\r\n    display: block;\r\n    background-color:#eee\r\n\r\n\r\n}\r\nli {\r\n    text-align: center\r\n}"
+module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    text-align: left;\r\n    display: block;\r\n    background-color: #eee;\r\n    font-weight: 500;\r\n    padding-left: 8px;\r\n}"
 
 /***/ }),
 
@@ -1071,7 +1070,7 @@ var DynamictableComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    text-align: left;\r\n    display: block;\r\n    background-color:#eee\r\n}\r\n\r\n"
+module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    text-align: left;\r\n    display: block;\r\n    background-color: #eee;\r\n    font-weight: 500;\r\n    padding-left: 8px;\r\n}\r\n"
 
 /***/ }),
 
@@ -1082,7 +1081,7 @@ module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <ul class=\"list-group\">\n\n\n    <li class=\"list-group-item\">\n      <Span> Multiselect with default button name</Span><br>\n      <ng-multi-select-dropdown [option]=simpleMultiSelect (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        Multiselect with filter with select all or unselect all\n      </span><br>\n      <ng-multi-select-dropdown [option]=MultiSelectFilter (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        Multiselect as a single select given placeholder name\n\n      </span><br>\n      <ng-multi-select-dropdown [option]=multiselectAsSingleSelect (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        multiselect with show items in the list\n      </span><br>\n\n      <ng-multi-select-dropdown [option]=options (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n\n  </ul>\n</div>"
+module.exports = "<div class=\"container\">\n  <ul class=\"list-group\">\n\n\n    <li class=\"list-group-item\">\n      <Span> Multiselect with default button name</Span><br>\n      <ng-multi-select-dropdown [option]=simpleMultiSelect (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        Multiselect with filter with select all or unselect all\n      </span><br>\n      <ng-multi-select-dropdown [option]=MultiSelectFilter (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        Multiselect as a single select given placeholder name\n\n      </span><br>\n      <ng-multi-select-dropdown [option]=multiselectAsSingleSelect (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        Multiselect with show items in the list\n      </span><br>\n\n      <ng-multi-select-dropdown [option]=options (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n\n  </ul>\n</div>"
 
 /***/ }),
 

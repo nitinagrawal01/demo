@@ -30,36 +30,6 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/jquery-ui-1.12.1.custom/jquery-ui.css":
-/*!************************************************************!*\
-  !*** ./node_modules/jquery-ui-1.12.1.custom/jquery-ui.css ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../raw-loader!../postcss-loader/lib??embedded!./jquery-ui.css */ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./node_modules/jquery-ui-1.12.1.custom/jquery-ui.css");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
 /***/ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./node_modules/bootstrap/dist/css/bootstrap.min.css":
 /*!*********************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader!./node_modules/postcss-loader/lib??embedded!./node_modules/bootstrap/dist/css/bootstrap.min.css ***!
@@ -71,10 +41,10 @@ module.exports = "/*!\n * Bootstrap v4.1.3 (https://getbootstrap.com/)\n * Copyr
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./node_modules/jquery-ui-1.12.1.custom/jquery-ui.css":
-/*!**********************************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader!./node_modules/postcss-loader/lib??embedded!./node_modules/jquery-ui-1.12.1.custom/jquery-ui.css ***!
-  \**********************************************************************************************************************************/
+/***/ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./src/jquery-ui-1.12.1.custom/jquery-ui.css":
+/*!*************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./node_modules/postcss-loader/lib??embedded!./src/jquery-ui-1.12.1.custom/jquery-ui.css ***!
+  \*************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -584,6 +554,36 @@ module.exports = function (css) {
 
 /***/ }),
 
+/***/ "./src/jquery-ui-1.12.1.custom/jquery-ui.css":
+/*!***************************************************!*\
+  !*** ./src/jquery-ui-1.12.1.custom/jquery-ui.css ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../node_modules/raw-loader!../../node_modules/postcss-loader/lib??embedded!./jquery-ui.css */ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./src/jquery-ui-1.12.1.custom/jquery-ui.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./src/styles.css":
 /*!************************!*\
   !*** ./src/styles.css ***!
@@ -615,15 +615,15 @@ if(false) {}
 /***/ }),
 
 /***/ 2:
-/*!***************************************************************************************************************************************!*\
-  !*** multi ./src/styles.css ./node_modules/bootstrap/dist/css/bootstrap.min.css ./node_modules/jquery-ui-1.12.1.custom/jquery-ui.css ***!
-  \***************************************************************************************************************************************/
+/*!******************************************************************************************************************************!*\
+  !*** multi ./src/styles.css ./node_modules/bootstrap/dist/css/bootstrap.min.css ./src/jquery-ui-1.12.1.custom/jquery-ui.css ***!
+  \******************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! D:\demoLibrary\src\styles.css */"./src/styles.css");
 __webpack_require__(/*! D:\demoLibrary\node_modules\bootstrap\dist\css\bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
-module.exports = __webpack_require__(/*! D:\demoLibrary\node_modules\jquery-ui-1.12.1.custom\jquery-ui.css */"./node_modules/jquery-ui-1.12.1.custom/jquery-ui.css");
+module.exports = __webpack_require__(/*! D:\demoLibrary\src\jquery-ui-1.12.1.custom\jquery-ui.css */"./src/jquery-ui-1.12.1.custom/jquery-ui.css");
 
 
 /***/ })

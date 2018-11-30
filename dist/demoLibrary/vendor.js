@@ -70553,12 +70553,12 @@ var DropdownComponent = /** @class */ (function () {
         {
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                 selector: 'ng-multi-select-dropdown',
-                template: ` <div  [ngClass]="option.addCssClass">
-            <button type="button" class="button" (click)="toggle = !toggle" >
+                template: `<div  [ngClass]="option.addCssClass">
+            <button type="button" class="buttons" (click)="toggle = !toggle" >
               <ng-container *ngIf="data.length > 0; else elseSelect">
                 <ng-container *ngIf="data.length <= option.itemsShowLimit; else numberTemplate">
-                  <span *ngFor="let item of data; let last = last">{{item[option.textKey]}}<span class="delete" (click)="delete(item) ">
-                    <span>x</span>
+                  <span *ngFor="let item of data; let last = last">{{item[option.textKey]}}<span class="deletes" (click)="delete(item) ">
+                    <span class="deleteButton">x</span>
                     </span>
                     <span *ngIf="data.length>1 && !last">, </span>
                   </span>
@@ -70578,36 +70578,36 @@ var DropdownComponent = /** @class */ (function () {
               </ng-template>
             </button>
           
-            <div  class="row abs"  [hidden]= "toggle"  *ngIf="option.array.length > 0">
-              <div class="column">
-                  <div class="card">
-                <div class="searchDiv" *ngIf="option.allowSearchFilter == true">
-                  <input type="search" class="search" placeholder="{{option.texts.searchPlaceHolder}}" [(ngModel)]="searchText">
+            <div   class="rows"  [hidden]= "toggle"  *ngIf="option.array.length > 0">
+              <div class="columns">
+                  <div class="cards">
+                <div class="searchDivs" *ngIf="option.allowSearchFilter == true">
+                  <input type="search" class="searchs" placeholder="{{option.texts.searchPlaceHolder}}" [(ngModel)]="searchText">
                 </div>
           
-                <div class="selectDiv" *ngIf="option.isSelect == true && option.isMultiSelectOrSingleSelect === true && option.disableDropdown == false">
-                  <input type="button" class="button" value="{{option.texts.selectAllButtonName}}" (click)="selectAll(option.array)">
-                  <input type="button" class="button" value="{{option.texts.unSelectAllButtonName}}" (click)="unSelectAll(option.array)">
+                <div class="selectDivs" *ngIf="option.isSelect == true && option.isMultiSelectOrSingleSelect === true && option.disableDropdown == false">
+                  <input type="button" class="buttons" value="{{option.texts.selectAllButtonName}}" (click)="selectAll(option.array)">
+                  <input type="button" class="buttons" value="{{option.texts.unSelectAllButtonName}}" (click)="unSelectAll(option.array)">
                 </div> 
           
               <ng-container *ngIf="option.isMultiSelectOrSingleSelect === true ; else elseTemplate">
-                <div class="checkBoxDiv "  *ngFor="let item of option.array|search:searchText:option">
+                <div class="checkBoxDivs"  *ngFor="let item of option.array|search:searchText:option">
                   
-                      <label class="container" >
+                      <label class="containers" >
                     <input type="checkbox" name="check" [disabled] = option.disableDropdown  [(ngModel)]="item.checked" (change)="getData($event, item)" [value]="item[option.valueKey]">{{item[option.textKey]}}
-                    <span class="checkmark"></span>  
+                    <span class="checkmarks"></span>  
                   </label>
                 </div>
               </ng-container>
           
               <ng-template #elseTemplate>
-                <div class="table-div checkBoxDiv">
+                <div class="table-divs checkBoxDivs">
                   <table>
                     <tr *ngFor="let entity of option.array | search:searchText:option ; let index = index">
                       <td>
-                          <label class="container">
+                          <label class="containers">
                         <input type="checkbox" [(ngModel)]="entity.checked" [value]="entity[option.valueKey]" (click)="updateSelection(index, option.array, $event, entity )" />{{entity[option.textKey]}}
-                        <span class="checkmark"></span> 
+                        <span class="checkmarks"></span> 
                       </label>
                       </td>
                     </tr>
@@ -70616,14 +70616,14 @@ var DropdownComponent = /** @class */ (function () {
               </ng-template>
           
               <ng-container *ngIf="option.texts.closeButtonName; else elseButton">
-              <div class="selectDivs close" (click)="clear()">
-              <button class="buttons selectDivs" (click)="toggle = !toggle">{{option.texts.closeButtonName}} </button>
-            </div>
+                  <div class="selectDivs close" (click)="clear()">
+                      <button class="buttons selectDivs" (click)="toggle = !toggle">{{option.texts.closeButtonName}} </button>
+                    </div>
               </ng-container>
           
               <ng-template #elseButton>
-                <div class="selectDiv close" (click)="clear()">
-                <button class="button selectDiv" (click)="toggle = !toggle">close </button>
+                <div class="selectDivs close" (click)="clear()">
+                <button type="button" class="buttons selectDivs" (click)="toggle = !toggle">close </button>
               </div>
               </ng-template>
               </div>
@@ -70631,10 +70631,8 @@ var DropdownComponent = /** @class */ (function () {
           </div>
           </div>`,
                 styles: [`/* The container */
-
-       
-          .container {
-              display: inline;
+          .containers {
+              display: block;
               position: relative;
               padding-left: 25px;
               margin-bottom: 1px;
@@ -70643,14 +70641,14 @@ var DropdownComponent = /** @class */ (function () {
           }
           
           /* Hide the browser's default checkbox */
-          .container input {
+          .containers input {
               position: absolute;
               opacity: 0;
               cursor: pointer;
           }
           
           /* Create a custom checkbox */
-          .checkmark {
+          .checkmarks {
               position: absolute;
               top: 0;
               left: 0;
@@ -70660,38 +70658,39 @@ var DropdownComponent = /** @class */ (function () {
           }
           
           /* On mouse-over, add a grey background color */
-          .container:hover input ~ .checkmark {
+          .containers:hover input ~ .checkmarks {
               background-color: #ccc;
           }
           
           /* When the checkbox is checked, add a blue background */
-          .container input:checked ~ .checkmark {
-              background-color: #76797c;
+          .containers input:checked ~ .checkmarks {
+              background-color: #3f51b5;
           }
           
           /* Create the checkmark/indicator (hidden when not checked) */
-          .checkmark:after {
+          .checkmarks:after {
               content: "";
               position: absolute;
               display: none;
           }
           
           /* Show the checkmark when checked */
-          .container input:checked ~ .checkmark:after {
+          .containers input:checked ~ .checkmarks:after {
               display: block;
           }
           
           /* Style the checkmark/indicator */
-          .container .checkmark:after {
+          .containers .checkmarks:after {
             left: 6px;
             top: 2px;
             width: 6px;
-            height: 11px;
+            height: 10px;
             border: solid white;
-            border-width: 0 3px 3px 0;
+            border-width: 0 3px 3px 0px;
             -webkit-transform: rotate(45deg);
             -ms-transform: rotate(45deg);
-            transform: rotate(45deg)
+            transform: rotate(45deg);
+              
           }
           
           * {
@@ -70701,16 +70700,16 @@ var DropdownComponent = /** @class */ (function () {
           
           
           /* Float four columns side by side */
-          .column {
+          .columns {
               float: auto;
               width: 18%;
               padding: 0 5px;
           }
           
-          .row {margin: 0 -5px;}
+          .rows {margin: 0 -5px;}
           
           /* Clear floats after the columns */
-          .row:after {
+          .rows:after {
             content: "";
             display: table;
             clear: both;
@@ -70718,7 +70717,7 @@ var DropdownComponent = /** @class */ (function () {
           
           /* Responsive columns */
           @media screen and (max-width: 600px) {
-            .column {
+            .columns {
               width: 100%;
               display: block;
               margin-bottom: 10px;
@@ -70726,14 +70725,17 @@ var DropdownComponent = /** @class */ (function () {
           }
           
           /* Style the counter cards */
-          .card {
+          .cards {
               box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
               padding: 0 0 0 0;
               background-color: white;
               border: 1px solid #ddd;
+              width: 175px;
+              position:absolute;
+              z-index: 2;
           }
-          .button {
-              background:gray;
+          .buttons {
+              background:#3f51b5;
               border: none;
               color: white;
               padding: 5px 10px;
@@ -70742,46 +70744,48 @@ var DropdownComponent = /** @class */ (function () {
               display: inline-block;
               font-size: 15px;
               cursor: pointer;
+              
           }
           
-          .search {
+          .searchs {
               width: 100%;
               height: 35px;
               padding-left: 10px;
               border: 1px solid #eee;
           }
           
-          .searchDiv {
+          .searchDivs {
               width: 100%;
               margin-bottom: 10px;
           }
           
-          .table-div{
+          .table-divs{
               margin-left: 10px;
           }
           
-          .selectDiv {
+          .selectDivs {
               text-align: center;
               margin: 10px 0 10px 0px;
+              float:initial;
           }
           
-          .checkBoxDiv {
+          .checkBoxDivs {
               margin-left: 10px;
               text-align: left;
           }
           
-          .selectDiv .button{
+          .selectDivs .buttons{
               padding: 5px 10px;
               font-size: 12px;
               margin-right: 5px;
               margin-left: 5px;
           }
           
-          .selectDiv.close{
+          .selectDivs.close{
               margin: 0px;
           }
           
-          .delete{
+          .deletes{
               
               background: #FFF;
               border: 1px solid;
@@ -70791,12 +70795,17 @@ var DropdownComponent = /** @class */ (function () {
               height: 12px;
               margin-left: 5px;
           }
-          .delete span{
-              font-size: 7px;
+          .deletes span{
+              font-size: 10px;
               display: block;
               color: #444;
                   }
-          
+
+                  .deleteButton{
+                    bottom: 32px;
+                    padding: 0px;
+                    margin: -2px;
+                  }
           
           `]
             },]
@@ -71294,9 +71303,9 @@ var TableComponent = /** @class */ (function () {
                         opacity: .4;
                     }
                     .pagination li.active{
-                        background-color: gray;
+                        background-color: #3f51b5;
                         color: white;
-                        border: 1px solid gray;
+                        border: 1px solid #3f51b5;
                     }
                     
                     #customers {
@@ -71318,7 +71327,7 @@ var TableComponent = /** @class */ (function () {
                         padding-top: 10px;
                         padding-bottom: 10px;
                         text-align: left;
-                        background-color: #666;
+                        background-color: #3f51b5;
                         color: white;
                     }
                     
@@ -71579,7 +71588,7 @@ var CollapseComponent = /** @class */ (function () {
                   </ng-container>`,
                     styles: [`
                     .accordion {
-                        background-color: #666;
+                        background-color: #eee;
                         color: rgb(27, 36, 218);
                         cursor: pointer;
                         padding: 18px;
@@ -71844,11 +71853,10 @@ var SearchboxComponent = /** @class */ (function () {
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                 selector: 'ng-dynamic-autocompleteField',
                 template: `
-                    <div style ='text-align: center;'>
                      <input  type="search" [(ngModel)]='searchText' placeholder="{{this.placeholder}}" ng-model="search">
                      <span ng-if="search.length" class="input-button button button-icon ion-android-close" ng-click="clearSearch()">
                     </span>
-                    <table style ='text-align: center;'>
+                    <table>
                       <span *ngIf='searchText'>
                         <tr *ngFor='let value of options.data|searchFilter:searchBy:searchText' (click)='searchRowValue(value)'>
                           <td *ngFor='let n of displayBy'>
@@ -71862,25 +71870,19 @@ var SearchboxComponent = /** @class */ (function () {
                         </tr>
                       </span>
                     </table>
-                    </div>
                     `,
                 styles: [`
                     
-                    input {
-
-                  text
-
-                    }
+                
                     table {
-                       
-                         position:absolute;
+                        position: absolute;
+                        z-index: 2;
                         font-family: arial, sans-serif;
-                        border-collapse: collapse;
+                      
                         width: 100%;
                     }
                     
                     td {
-
                         border: 1px solid #dddddd;
                         text-align: left;
                         padding: 8px;
