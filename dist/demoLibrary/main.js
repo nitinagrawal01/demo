@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    text-align: left;\r\n    display: block;\r\n    background-color:#eee;\r\n    padding: 8px;\r\n    font-weight: 500;\r\n\r\n}\r\n"
+module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    text-align: left;\r\n    display: block;\r\n    background-color:#eee;\r\n    padding: 8px;\r\n    font-weight: 500;\r\n\r\n}\r\nli {\r\n\r\n    margin: 7px\r\n}"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">\n      <span> Accordian without subheading with body open and section disable </span>&nbsp;\n      <ng-dynamic-accordion [option]=accordianWithOneHeading></ng-dynamic-accordion>\n    </li>\n    <li class=\"list-group-item\">\n      <span>Accordian without subheading with body close and section enable </span>&nbsp;\n      <ng-dynamic-accordion [option]=accordianWithOneHeadingDisable></ng-dynamic-accordion>\n    </li>\n    <li class=\"list-group-item\">\n      <span>Accordian with subheading</span>&nbsp;\n      <ng-dynamic-accordion [option]=options></ng-dynamic-accordion>\n    </li>\n  </ul>\n</div>"
+module.exports = "<div class=\"container\">\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">\n        <span>\n            <h5>Accordian</h5>\n            <p>- Heading</p>\n            <p>- Body</p>\n            <p>- Section disable</p>\n          </span><br>\n      <!-- <span> Accordian without subheading with body open and section disable </span>&nbsp; -->\n      <ng-dynamic-accordion [option]=accordianWithOneHeading></ng-dynamic-accordion>\n    </li>\n    <li class=\"list-group-item\">\n        <span>\n            <h5>Accordian</h5>\n            <p>- Heading</p>\n            <p>- Body close</p>\n            <p>- Section enable</p>\n          </span><br>\n      <!-- <span>Accordian without subheading with body close and section enable </span>&nbsp; -->\n      <ng-dynamic-accordion [option]=accordianWithOneHeadingDisable></ng-dynamic-accordion>\n    </li>\n    <li class=\"list-group-item\">\n        <span>\n            <h5>Accordian</h5>\n            <p>- subheading</p>\n            <!-- <p>- Subheading</p>\n            <p>- Body close</p>\n            <p>- Section enable</p> -->\n          </span><br>\n      <!-- <span>Accordian with subheading</span>&nbsp; -->\n      <ng-dynamic-accordion [option]=options></ng-dynamic-accordion>\n    </li>\n  </ul>\n</div>"
 
 /***/ }),
 
@@ -167,7 +167,7 @@ module.exports = "\r\n\r\ndiv{\r\n\r\nwidth: 100%;\r\nbackground-color:#3f51b5;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"myDIV\">\n  <button class=\"btn active\" [routerLink]=\"['accordian']\">ACCORDIAN</button>\n\n  <button class=\"btn\" [routerLink]=\"['datepicker']\">DATEPICKER</button>\n  <button class=\"btn\" [routerLink]=\"['autocompletesearch']\">AUTO COMPLETE</button>\n  <button class=\"btn\" [routerLink]=\"['multi-single-selectdropdown']\"> DROP-DOWN</button>\n  <button class=\"btn\" [routerLink]=\"['table']\">TABLE</button>\n</div>\n<router-outlet></router-outlet>"
+module.exports = "<div id=\"myDIV\">\n  <button class=\"btn active\" [routerLink]=\"['accordian']\">ACCORDIANS</button>\n\n  <button class=\"btn\" [routerLink]=\"['datepicker']\">DATEPICKERS</button>\n  <button class=\"btn\" [routerLink]=\"['autocompletesearch']\">AUTO COMPLETES</button>\n  <button class=\"btn\" [routerLink]=\"['multi-single-selectdropdown']\"> DROP-DOWNS</button>\n  <button class=\"btn\" [routerLink]=\"['table']\">TABLES</button>\n</div>\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -358,7 +358,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    text-align: left;\r\n    display: block;\r\n    background-color: #eee;\r\n    font-weight: 500;\r\n    padding-left: 8px;\r\n}"
+module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    text-align: left;\r\n    display: block;\r\n    background-color: #eee;\r\n    font-weight: 500;\r\n    padding-left: 8px;\r\n}li {\r\n\r\n    margin: 7px\r\n}"
 
 /***/ }),
 
@@ -369,7 +369,7 @@ module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">\n      <span>Search by one field and display data by two field</span><br>\n      <ng-dynamic-autocompleteField [options]=dataByFirstNameDisplayByLastName (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n    </li>\n     <li class=\"list-group-item\">\n      <span> Search by multiple field,display multiple field data</span><br>\n      <ng-dynamic-autocompleteField [options]=dataByAllFieldAndSearchByallField (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n\n    </li>\n    <li class=\"list-group-item\">\n      <span>Search with default highlight color</span><br>\n      <ng-dynamic-autocompleteField [options]=dataWithDefaultHighlightColor (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n    </li>\n    <li class=\"list-group-item\">\n      <span>Search with given highlight color </span><br>\n      <ng-dynamic-autocompleteField [options]=options (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n    </li> \n  </ul>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">\n        <!-- <span>\n            <h5>Auto-comple</h5>\n            <p>- Animation fast, fadeIn</p>\n            <p>- Show next or prev as later or earlier</p>\n          </span><br> -->\n      <span> Auto-complete search by one key</span><br>\n      <ng-dynamic-autocompleteField [options]=dataByFirstNameDisplayByLastName (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n    </li>\n     <li class=\"list-group-item\">\n         \n      <span>  Auto-complete search by all keys</span><br>\n      <ng-dynamic-autocompleteField [options]=dataByAllFieldAndSearchByallField (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n\n    </li>\n    <li class=\"list-group-item\">\n        <span> Auto-complete search with default highlight color</span><br>\n      <!-- <span>Search with default highlight color</span><br> -->\n      <ng-dynamic-autocompleteField [options]=dataWithDefaultHighlightColor (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n    </li>\n    <li class=\"list-group-item\">\n      <span>Auto-complete search with given highlight color</span><br>\n      <ng-dynamic-autocompleteField [options]=options (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n    </li> \n  </ul>\n</div>\n"
 
 /***/ }),
 
@@ -395,7 +395,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 var AutocompletesearchComponent = /** @class */ (function () {
-    function AutocompletesearchComponent() {
+    function AutocompletesearchComponent(_eref) {
+        this._eref = _eref;
         this.data = [
             { Id: 4, FirstName: 'Narco', LastName: 'Ramos' },
             { Id: 2, FirstName: 'Bombasto', LastName: 'Cox' },
@@ -462,6 +463,10 @@ var AutocompletesearchComponent = /** @class */ (function () {
             data: this.data // this is the data of the field
         };
     }
+    AutocompletesearchComponent.prototype.onClick = function (event) {
+        if (!this._eref.nativeElement.contains(event.target)) {
+        }
+    };
     AutocompletesearchComponent.prototype.receiveRowValue = function (event) {
         console.log(event);
     };
@@ -471,9 +476,13 @@ var AutocompletesearchComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-autocompletesearch',
             template: __webpack_require__(/*! ./autocompletesearch.component.html */ "./src/app/autocompletesearch/autocompletesearch.component.html"),
-            styles: [__webpack_require__(/*! ./autocompletesearch.component.css */ "./src/app/autocompletesearch/autocompletesearch.component.css")]
+            styles: [__webpack_require__(/*! ./autocompletesearch.component.css */ "./src/app/autocompletesearch/autocompletesearch.component.css")],
+            // tslint:disable-next-line:use-host-property-decorator
+            host: {
+                '(document:click)': 'onClick($event)',
+            },
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]])
     ], AutocompletesearchComponent);
     return AutocompletesearchComponent;
 }());
@@ -489,7 +498,7 @@ var AutocompletesearchComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    text-align: left;\r\n    display: block;\r\n    background-color: #eee;\r\n    font-weight: 500;\r\n    padding-left: 8px;\r\n}\r\n"
+module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    text-align: left;\r\n    display: block;\r\n    background-color: #eee;\r\n    font-weight: 500;\r\n    padding-left: 8px;\r\n}\r\nli {\r\n\r\n    margin: 7px\r\n}"
 
 /***/ }),
 
@@ -500,7 +509,7 @@ module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">\n      <span>Datepicker with (mm dd, yy) format with first day 0 (sun),with min and max date,with month skip one</span><br>\n      <input type=\"text\" [option]=datePickerWithMmDdFormat (eventDate)=\"receiveDate($event)\" appMydatepicker>\n    </li>\n    <li class=\"list-group-item\">\n      <span>Datepicker with (dd mm, yy) format with first day 1 (mon) ,min date current date max 5 month one weak from\n        current date with button panel</span><br>\n      <input type=\"text\" [option]=datePickerWithDdMmFormat (eventDate)=\"receiveDate($event)\" appMydatepicker>\n    </li>\n    <li class=\"list-group-item\">\n      <span>Datepicker with weak,month or year dropdown ,years range,with hide prev and next if month disable,skip two\n        month </span><br>\n      <input type=\"text\" [option]=datePickerWithWeak (eventDate)=\"receiveDate($event)\" appMydatepicker>\n    </li>\n    <li class=\"list-group-item\">\n      <span>Datepicker with animation fast,fadeIn,show next or prev later or earlier name </span><br>\n      <input type=\"text\" [option]=datePickerWithanimation (eventDate)=\"receiveDate($event)\" appMydatepicker>\n    </li>\n    <li class=\"list-group-item\">\n      <span>Datepicker with other month date,select that date,show the month before year,suffix on title bar\n      </span><br>\n      <input type=\"text\" [option]=selectAndShowOtherMonthDate (eventDate)=\"receiveDate($event)\" appMydatepicker>\n    </li>\n    <li class=\"list-group-item\">\n      <span> Datepicker with the icon and image on the icon</span><br>\n      <input type=\"text\" [option]=datePickerWithIconAndImage (eventDate)=\"receiveDate($event)\" appMydatepicker>\n    </li>\n    <li class=\"list-group-item\">\n      <span> Datepicker with text on icon,show more than onw month with position of current month</span>&nbsp;\n      <input type=\"text\" [option]=numberOfMonthDisplayButtonIconText (eventDate)=\"receiveDate($event)\" appMydatepicker>\n    </li>\n    <li class=\"list-group-item\">\n      <span>Datepicker with right to left show</span><br>\n      <input type=\"text\" [option]=options (eventDate)=\"receiveDate($event)\" appMydatepicker>\n    </li>\n  </ul>\n</div>"
+module.exports = "<div class=\"container\">\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">\n      <span>\n        <h5>Datepicker </h5>\n        <p>- Format (mm dd, yy) </p>\n        <p>- First day (sun)</p>\n        <p>- Min (Before 6 month) and Max (After one month) date</p>\n      </span><br>\n      <input type=\"text\" [option]=datePickerWithMmDdFormat (eventDate)=\"receiveDate($event)\" appMydatepicker>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        <h5>Datepicker </h5>\n        <p>- Format (dd mm, yy) </p>\n        <p>- First day (mon)</p>\n        <p>- Min (today) and Max (After 5 month) date</p>\n        <p>- Button panel</p>\n      </span><br>\n      <input type=\"text\" [option]=datePickerWithDdMmFormat (eventDate)=\"receiveDate($event)\" appMydatepicker>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        <h5>Datepicker </h5>\n        <p>- Weak</p>\n        <p>- Month, year dropdown</p>\n        <p>- Year range</p>\n        <p>- Hide prev, next </p>\n        <p>- Skip two month </p>\n      </span><br>\n      <input type=\"text\" [option]=datePickerWithWeak (eventDate)=\"receiveDate($event)\" appMydatepicker>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        <h5>Datepicker</h5>\n        <p>- Animation fast, fadeIn</p>\n        <p>- Show next or prev as later or earlier</p>\n      </span><br>\n      <input type=\"text\" [option]=datePickerWithanimation (eventDate)=\"receiveDate($event)\" appMydatepicker>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        <h5>Datepicker </h5>\n        <p>- Display next month date</p>\n        <p>- Select next month date</p>\n        <p>- Show month before year</p>\n        <p>- Show text on title bar </p>\n      </span><br>\n\n      <input type=\"text\" [option]=selectAndShowOtherMonthDate (eventDate)=\"receiveDate($event)\" appMydatepicker>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        <h5>Datepicker </h5>\n        <p>- Icon</p>\n        <p>- Image on icon</p>\n      </span><br>\n      <input type=\"text\" [option]=datePickerWithIconAndImage (eventDate)=\"receiveDate($event)\" appMydatepicker>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        <h5>Datepicker </h5>\n        <p>- Text on icon</p>\n        <p>- Show more than one month</p>\n        <p>- Position of current month</p>\n      </span><br>\n      <input type=\"text\" [option]=numberOfMonthDisplayButtonIconText (eventDate)=\"receiveDate($event)\" appMydatepicker>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        <h5>Datepicker </h5>\n        <p>- Show right to left</p>\n      </span><br>\n      <input type=\"text\" [option]=options (eventDate)=\"receiveDate($event)\" appMydatepicker>\n    </li>\n  </ul>\n</div>"
 
 /***/ }),
 
@@ -563,8 +572,8 @@ var DatepickerComponent = /** @class */ (function () {
         this.datePickerWithMmDdFormat = {
             dateFormat: 'MM dd, yy',
             firstCalendarDay: 0,
-            minimumDate: new Date(2017, 1, 1),
-            maximumDate: '+5m +1w',
+            minimumDate: '-6m',
+            maximumDate: '+1m',
             showButtonPanel: false,
             closeButtonText: 'Close',
             dayName: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
@@ -594,7 +603,7 @@ var DatepickerComponent = /** @class */ (function () {
             dateFormat: 'dd MM, yy',
             firstCalendarDay: 1,
             minimumDate: new Date(2017, 1, 1),
-            maximumDate: '+5m +1w',
+            maximumDate: '+5m',
             showButtonPanel: true,
             closeButtonText: 'Close',
             dayName: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
@@ -802,7 +811,7 @@ var DatepickerComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    text-align: left;\r\n    display: block;\r\n    background-color: #eee;\r\n    font-weight: 500;\r\n    padding-left: 8px;\r\n}"
+module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    text-align: left;\r\n    display: block;\r\n    background-color: #eee;\r\n    font-weight: 500;\r\n    padding-left: 8px;\r\n}li {\r\n\r\n    margin: 7px\r\n}"
 
 /***/ }),
 
@@ -813,7 +822,7 @@ module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">\n      <span> Table</span><br>\n      <ng-dynamic-Table [options]=table (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n    <li class=\"list-group-item\">\n      <span> Table with footer</span><br>\n      <ng-dynamic-Table [options]=tableWithFooter (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n    <li class=\"list-group-item\">\n      <span> table with default sorting and sort by multiple columns name</span><br>\n      <ng-dynamic-Table [options]=tableWithSoorting (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n    <li class=\"list-group-item\">\n      <span> Table with search and search by firstname with default placeholder ,default message if the record not\n        found</span><br>\n      <ng-dynamic-Table [options]=tableWithSearching (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n    <li class=\"list-group-item\">\n      <span> Table with search and search more than one field with given placeholder ,given message if the record not\n        found</span><br>\n\n      <ng-dynamic-Table [options]=tableWithSearchingbyMultipleName (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        table with pagination\n\n      </span><br>\n      <ng-dynamic-Table [options]=options (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n\n  </ul>\n</div>"
+module.exports = "<div class=\"container\">\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">\n      <span> Default table</span><br>\n      <ng-dynamic-Table [options]=table (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n    <li class=\"list-group-item\">\n      <span> Table with footer</span><br>\n      <ng-dynamic-Table [options]=tableWithFooter (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n    <li class=\"list-group-item\">\n        <span>\n            <h5>Table</h5>\n            <p>- Default sorting</p>\n            <p>- Sort by multiple keys</p>\n          </span><br>\n      <!-- <span> Table with default sorting and sort by multiple columns name</span><br> -->\n      <ng-dynamic-Table [options]=tableWithSoorting (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n    <li class=\"list-group-item\">\n        <span>\n            <h5>Table</h5>\n            <p>- Search by one key</p>\n            <p>- Default placeholder</p>\n            <p>- Default message</p>\n          </span><br>\n      <!-- <span> Table with search and search by firstname with default placeholder ,default message if the record not\n        found</span><br> -->\n      <ng-dynamic-Table [options]=tableWithSearching (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n    <li class=\"list-group-item\">\n        <span>\n            <h5>Table</h5>\n            <p>- Search all keys</p>\n            <p>- Given placeholder</p>\n            <p>- Given message</p>\n          </span><br>\n      <!-- <span> Table with search and search more than one field with given placeholder, given message if the record not\n        found</span><br> -->\n\n      <ng-dynamic-Table [options]=tableWithSearchingbyMultipleName (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        Table with pagination\n\n      </span><br>\n      <ng-dynamic-Table [options]=options (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n\n  </ul>\n</div>"
 
 /***/ }),
 
@@ -857,8 +866,8 @@ var DynamictableComponent = /** @class */ (function () {
         this.searchData = {
             'isSearching': true,
             'searchBy': ['FirstName', 'LastName'],
-            'searchTitle': 'search by  name or lastName',
-            'noRecord': 'no record found' // this is for the msg if records does not found
+            'searchTitle': ' FirstName lastName Id',
+            'noRecord': 'No record found' // this is for the msg if records does not found
         };
         this.headerData = [
             {
@@ -902,7 +911,7 @@ var DynamictableComponent = /** @class */ (function () {
             'isSearching': false,
             'searchBy': ['FirstName', 'LastName'],
             'searchTitle': 'search by  name or lastName',
-            'noRecord': 'no record found' // this is for the msg if records does not found
+            'noRecord': 'No record found' // this is for the msg if records does not found
         };
         this.tableHeaderData = [
             {
@@ -1032,7 +1041,7 @@ var DynamictableComponent = /** @class */ (function () {
             'isSearching': true,
             'searchBy': ['FirstName', 'LastName', 'Id'],
             'searchTitle': 'FirstName LastName Id',
-            'noRecord': 'no record found' // this is for the msg if records does not found
+            'noRecord': 'No record found' // this is for the msg if records does not found
         };
         this.tableWithSearchingbyMultipleName = {
             headerData: this.tableWithDefaultSortingandAndSortbySomeFields,
@@ -1070,7 +1079,7 @@ var DynamictableComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    text-align: left;\r\n    display: block;\r\n    background-color: #eee;\r\n    font-weight: 500;\r\n    padding-left: 8px;\r\n}\r\n"
+module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\n    text-align: left;\r\n    display: block;\r\n    background-color: #eee;\r\n    font-weight: 500;\r\n    padding-left: 8px;\r\n}\r\nli {\r\n\r\n    margin: 7px\r\n}"
 
 /***/ }),
 
@@ -1081,7 +1090,7 @@ module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <ul class=\"list-group\">\n\n\n    <li class=\"list-group-item\">\n      <Span> Multiselect with default button name</Span><br>\n      <ng-multi-select-dropdown [option]=simpleMultiSelect (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        Multiselect with filter with select all or unselect all\n      </span><br>\n      <ng-multi-select-dropdown [option]=MultiSelectFilter (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        Multiselect as a single select given placeholder name\n\n      </span><br>\n      <ng-multi-select-dropdown [option]=multiselectAsSingleSelect (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        Multiselect with show items in the list\n      </span><br>\n\n      <ng-multi-select-dropdown [option]=options (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n\n  </ul>\n</div>"
+module.exports = "<div class=\"container\">\n  <ul class=\"list-group\">\n\n\n    <li class=\"list-group-item\">\n      <Span> Multiselect with default button name</Span><br>\n      <ng-multi-select-dropdown [option]=simpleMultiSelect (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        <h5> Multiselect </h5>\n        <p>- Search </p>\n        <p>- Select or unselect all</p>\n       \n      </span><br>\n      <!-- <span>\n        Multiselect with filter with select all or unselect all\n      </span><br> -->\n      <ng-multi-select-dropdown [option]=MultiSelectFilter (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n        <span>\n            <h5> Multiselect </h5>\n            <p>- Single select </p>\n            <p>- Given placeholder</p>\n          </span><br>\n      <!-- <span>\n        Multiselect as a single select given placeholder name\n\n      </span><br> -->\n      <ng-multi-select-dropdown [option]=multiselectAsSingleSelect (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        Multiselect with show items in the list\n      </span><br>\n      <ng-multi-select-dropdown [option]=options (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n\n  </ul>\n</div>"
 
 /***/ }),
 

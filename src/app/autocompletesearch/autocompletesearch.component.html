@@ -1,23 +1,30 @@
 <div class="container">
   <ul class="list-group">
     <li class="list-group-item">
-      <span>Search by one field and display data by two field</span><br>
+        <!-- <span>
+            <h5>Auto-comple</h5>
+            <p>- Animation fast, fadeIn</p>
+            <p>- Show next or prev as later or earlier</p>
+          </span><br> -->
+      <span> Auto-complete search by one key</span><br>
       <ng-dynamic-autocompleteField [options]=dataByFirstNameDisplayByLastName (changeEvent)="receiveRowValue($event)">
       </ng-dynamic-autocompleteField>
     </li>
      <li class="list-group-item">
-      <span> Search by multiple field,display multiple field data</span><br>
+         
+      <span>  Auto-complete search by all keys</span><br>
       <ng-dynamic-autocompleteField [options]=dataByAllFieldAndSearchByallField (changeEvent)="receiveRowValue($event)">
       </ng-dynamic-autocompleteField>
 
     </li>
     <li class="list-group-item">
-      <span>Search with default highlight color</span><br>
+        <span> Auto-complete search with default highlight color</span><br>
+      <!-- <span>Search with default highlight color</span><br> -->
       <ng-dynamic-autocompleteField [options]=dataWithDefaultHighlightColor (changeEvent)="receiveRowValue($event)">
       </ng-dynamic-autocompleteField>
     </li>
     <li class="list-group-item">
-      <span>Search with given highlight color </span><br>
+      <span>Auto-complete search with given highlight color</span><br>
       <ng-dynamic-autocompleteField [options]=options (changeEvent)="receiveRowValue($event)">
       </ng-dynamic-autocompleteField>
     </li> 

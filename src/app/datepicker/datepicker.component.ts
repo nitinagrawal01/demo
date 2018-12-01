@@ -57,8 +57,8 @@ export class DatepickerComponent implements OnInit {
     this.datePickerWithMmDdFormat = {
       dateFormat: 'MM dd, yy', // set selected date format
       firstCalendarDay: 0,  // set first day of calender by passing {0:sunday, 1: monday}.
-      minimumDate: new Date(2017, 1, 1), // set minimum date by passing this - new Date(2017, 1, 1) format as well as +5m +1w format.
-      maximumDate: '+5m +1w', // set maximum date by passing this new Date(2017, 1, 1) format as well as +5m +1w format. 
+      minimumDate: '-6m', // set minimum date by passing this - new Date(2017, 1, 1) format as well as +5m +1w format.
+      maximumDate: '+1m', // set maximum date by passing this new Date(2017, 1, 1) format as well as +5m +1w format. 
       showButtonPanel: false, // show button panel if passes true.
       closeButtonText: 'Close', // you can change close button name.
       dayName: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'], // set day name by passing in this format.
@@ -92,7 +92,7 @@ export class DatepickerComponent implements OnInit {
       dateFormat: 'dd MM, yy', // set selected date format
       firstCalendarDay: 1,  // set first day of calender by passing {0:sunday, 1: monday}.
       minimumDate: new Date(2017, 1, 1), // set minimum date by passing this - new Date(2017, 1, 1) format as well as +5m +1w format.
-      maximumDate: '+5m +1w', // set maximum date by passing this new Date(2017, 1, 1) format as well as +5m +1w format. 
+      maximumDate: '+5m', // set maximum date by passing this new Date(2017, 1, 1) format as well as +5m +1w format. 
       showButtonPanel: true, // show button panel if passes true.
       closeButtonText: 'Close', // you can change close button name.
       dayName: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'], // set day name by passing in this format.

@@ -1,9 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-autocompletesearch',
   templateUrl: './autocompletesearch.component.html',
-  styleUrls: ['./autocompletesearch.component.css']
+  styleUrls: ['./autocompletesearch.component.css'],
+  // tslint:disable-next-line:use-host-property-decorator
+  host: {
+    '(document:click)': 'onClick($event)',
+  },
 })
 export class AutocompletesearchComponent implements OnInit {
 
@@ -52,8 +56,12 @@ export class AutocompletesearchComponent implements OnInit {
     'highlightColour': string; // this is for giving the highlight color.
     'ishighlight': boolean; // this is for you want highlight or not
   };
+  onClick(event) {
+    if (!this._eref.nativeElement.contains(event.target)) { // or some similar check
+    }
+   }
 
-  constructor() {
+  constructor(private _eref: ElementRef) {
 
     this.data = [
 

@@ -1,38 +1,76 @@
 <div class="container">
   <ul class="list-group">
     <li class="list-group-item">
-      <span>Datepicker with (mm dd, yy) format with first day 0 (sun),with min and max date,with month skip one</span><br>
+      <span>
+        <h5>Datepicker </h5>
+        <p>- Format (mm dd, yy) </p>
+        <p>- First day (sun)</p>
+        <p>- Min (Before 6 month) and Max (After one month) date</p>
+      </span><br>
       <input type="text" [option]=datePickerWithMmDdFormat (eventDate)="receiveDate($event)" appMydatepicker>
     </li>
     <li class="list-group-item">
-      <span>Datepicker with (dd mm, yy) format with first day 1 (mon) ,min date current date max 5 month one weak from
-        current date with button panel</span><br>
+      <span>
+        <h5>Datepicker </h5>
+        <p>- Format (dd mm, yy) </p>
+        <p>- First day (mon)</p>
+        <p>- Min (today) and Max (After 5 month) date</p>
+        <p>- Button panel</p>
+      </span><br>
       <input type="text" [option]=datePickerWithDdMmFormat (eventDate)="receiveDate($event)" appMydatepicker>
     </li>
     <li class="list-group-item">
-      <span>Datepicker with weak,month or year dropdown ,years range,with hide prev and next if month disable,skip two
-        month </span><br>
+      <span>
+        <h5>Datepicker </h5>
+        <p>- Weak</p>
+        <p>- Month, year dropdown</p>
+        <p>- Year range</p>
+        <p>- Hide prev, next </p>
+        <p>- Skip two month </p>
+      </span><br>
       <input type="text" [option]=datePickerWithWeak (eventDate)="receiveDate($event)" appMydatepicker>
     </li>
     <li class="list-group-item">
-      <span>Datepicker with animation fast,fadeIn,show next or prev later or earlier name </span><br>
+      <span>
+        <h5>Datepicker</h5>
+        <p>- Animation fast, fadeIn</p>
+        <p>- Show next or prev as later or earlier</p>
+      </span><br>
       <input type="text" [option]=datePickerWithanimation (eventDate)="receiveDate($event)" appMydatepicker>
     </li>
     <li class="list-group-item">
-      <span>Datepicker with other month date,select that date,show the month before year,suffix on title bar
+      <span>
+        <h5>Datepicker </h5>
+        <p>- Display next month date</p>
+        <p>- Select next month date</p>
+        <p>- Show month before year</p>
+        <p>- Show text on title bar </p>
       </span><br>
+
       <input type="text" [option]=selectAndShowOtherMonthDate (eventDate)="receiveDate($event)" appMydatepicker>
     </li>
     <li class="list-group-item">
-      <span> Datepicker with the icon and image on the icon</span><br>
+      <span>
+        <h5>Datepicker </h5>
+        <p>- Icon</p>
+        <p>- Image on icon</p>
+      </span><br>
       <input type="text" [option]=datePickerWithIconAndImage (eventDate)="receiveDate($event)" appMydatepicker>
     </li>
     <li class="list-group-item">
-      <span> Datepicker with text on icon,show more than onw month with position of current month</span>&nbsp;
+      <span>
+        <h5>Datepicker </h5>
+        <p>- Text on icon</p>
+        <p>- Show more than one month</p>
+        <p>- Position of current month</p>
+      </span><br>
       <input type="text" [option]=numberOfMonthDisplayButtonIconText (eventDate)="receiveDate($event)" appMydatepicker>
     </li>
     <li class="list-group-item">
-      <span>Datepicker with right to left show</span><br>
+      <span>
+        <h5>Datepicker </h5>
+        <p>- Show right to left</p>
+      </span><br>
       <input type="text" [option]=options (eventDate)="receiveDate($event)" appMydatepicker>
     </li>
   </ul>

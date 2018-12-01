@@ -71280,7 +71280,14 @@ var TableComponent = /** @class */ (function () {
                   </div>
                   `,
                     styles: [`
-                    
+
+                    input {
+
+                        padding:3px;
+                    }
+                    table {
+                        margin-top: 8px;
+                    }
                     // .showpages{
                     //     position:absolute;
 
@@ -71332,12 +71339,12 @@ var TableComponent = /** @class */ (function () {
                     }
                     
                     .arrow-down.icon {
-                        color: #000;
+                        color: white;
                         position: absolute;
-                        margin-left: 10px;
-                        margin-top: 2px;
+                        margin-left: 11px;
+                        margin-top: 5px;
                         width: 1px;
-                        height: 16px;
+                        height: 14px;
                         background-color: currentColor;
                       }
                       .arrow-down.icon:before {
@@ -71354,12 +71361,12 @@ var TableComponent = /** @class */ (function () {
                       }
                     
                       .arrow-up.icon {
-                        color: #000;
+                        color: white;
                         position: absolute;
-                        margin-left: 10px;
-                        margin-top: 3px;
+                        margin-left: 11px;
+                        margin-top: 5px;
                         width: 1px;
-                        height: 16px;
+                        height: 14px;
                         background-color: currentColor;
                       }
                       .arrow-up.icon:before {
@@ -71569,12 +71576,12 @@ var CollapseComponent = /** @class */ (function () {
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                     selector: 'ng-dynamic-accordion',
                     template: `<ng-container *ngIf="option">
-                    <div *ngFor="let item of option.array; let i=index" [ngClass]="option.addCssClass">
+                    <div  *ngFor="let item of option.array; let i=index" [ngClass]="option.addCssClass" class ='headingBorder'>
                       <button class="accordion" (click)="click('parent'+i,item)" [disabled]="item. isDisable == true">{{item[option.textKeyHeading]}} </button>
                       <div [@slideInOut]='item.animations'>
                         <div class="panel">
                           <p>{{item[option.textKeyDesc]}}</p>
-                          <div *ngFor="let items of item.group; let index=index">
+                          <div *ngFor="let items of item.group; let index=index" class ='subHeadingBorder'>
                             <button class="accordion" (click)="click('child'+index,items)" [disabled]="item. isDisable == true">{{items[option.textKeysubHeading]}}</button>
                             <div [@slideInOut]='items.animations'>
                               <div class="panel">
@@ -71587,6 +71594,20 @@ var CollapseComponent = /** @class */ (function () {
                     </div>
                   </ng-container>`,
                     styles: [`
+                    .headingBorder {
+
+                        border: 1px solid #eee;
+                    
+                        margin:4px;
+
+                    }
+
+                    .subHeadingBorder {
+
+
+                        border: 1px solid #eee;
+                        margin:4px;
+                    }
                     .accordion {
                         background-color: #eee;
                         color: rgb(27, 36, 218);
@@ -71872,8 +71893,10 @@ var SearchboxComponent = /** @class */ (function () {
                     </table>
                     `,
                 styles: [`
-                    
-                
+                    input {
+                        -webkit-appearance: button;
+                        padding: 3px;
+                    }
                     table {
                         position: absolute;
                         z-index: 2;

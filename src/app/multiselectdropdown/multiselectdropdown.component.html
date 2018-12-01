@@ -9,16 +9,27 @@
     </li>
     <li class="list-group-item">
       <span>
-        Multiselect with filter with select all or unselect all
+        <h5> Multiselect </h5>
+        <p>- Search </p>
+        <p>- Select or unselect all</p>
+       
       </span><br>
+      <!-- <span>
+        Multiselect with filter with select all or unselect all
+      </span><br> -->
       <ng-multi-select-dropdown [option]=MultiSelectFilter (messageEvent)='onItemSelect($event)'>
       </ng-multi-select-dropdown>
     </li>
     <li class="list-group-item">
-      <span>
+        <span>
+            <h5> Multiselect </h5>
+            <p>- Single select </p>
+            <p>- Given placeholder</p>
+          </span><br>
+      <!-- <span>
         Multiselect as a single select given placeholder name
 
-      </span><br>
+      </span><br> -->
       <ng-multi-select-dropdown [option]=multiselectAsSingleSelect (messageEvent)='onItemSelect($event)'>
       </ng-multi-select-dropdown>
     </li>
@@ -26,7 +37,6 @@
       <span>
         Multiselect with show items in the list
       </span><br>
-
       <ng-multi-select-dropdown [option]=options (messageEvent)='onItemSelect($event)'>
       </ng-multi-select-dropdown>
     </li>
