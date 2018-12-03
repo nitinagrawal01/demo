@@ -234,7 +234,7 @@ export class DynamictableComponent implements OnInit {
       'isSearching': true, // this is for if you want to search allow
       'searchBy': ['FirstName', 'LastName', 'Id'], // this is for choice  by the column name searching
       'searchTitle': 'FirstName LastName Id', // this is the placeholder which you want to show
-      'noRecord': 'No record found' // this is for the msg if records does not found
+      'noRecord': 'No Record Found' // this is for the msg if records does not found
     };
 
     this.tableWithSearchingbyMultipleName = {

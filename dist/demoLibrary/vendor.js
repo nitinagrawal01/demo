@@ -71260,7 +71260,7 @@ var TableComponent = /** @class */ (function () {
                       <option *ngFor='let entry of options.pagination.showEntries'>{{entry}}</option>
                     </select>
                     <p  class="showpages">
-                      {{pager.startIndex + 1}}-{{pager.endIndex+1}} From Total entry {{pager.totalItems}}
+                      {{pager.startIndex + 1}}-{{pager.endIndex+1}} From Total Entry {{pager.totalItems}}
                     </p>
                     
                     <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
@@ -71283,6 +71283,13 @@ var TableComponent = /** @class */ (function () {
                   </div>
                   `,
                     styles: [`
+                    p {
+
+                        margin-left: 44px;
+                    }
+                    select {
+                        position:absolute;
+                    }
                    
   input {
 

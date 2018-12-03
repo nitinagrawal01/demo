@@ -79,13 +79,13 @@ var AccordianComponent = /** @class */ (function () {
                 // tslint:disable-next-line:max-line-length
                 heading: 'What is Lorem Ipsum?', desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', isDisable: false, isOpen: false,
                 // tslint:disable-next-line:max-line-length
-                group: [{ subHeading: ' translation by H. Rackham', isOpen: false, subDesc: 'But I must explain to you how all this mistaken idea of denouncing' }]
+                group: [{ subHeading: ' Translation by H. Rackham', isOpen: false, subDesc: 'But i must explain to you how all this mistaken idea of denouncing' }]
             },
             {
                 // tslint:disable-next-line:max-line-length
                 heading: '1914 translation by H. Rackham', desc: 'On the other hand, we denounce with righteous indignation and dislike men', isDisable: false, isOpen: false,
                 // tslint:disable-next-line:max-line-length
-                group: [{ subHeading: 'used since the 1500', isOpen: false, subDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun' }]
+                group: [{ subHeading: 'Used since the 1500', isOpen: false, subDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun' }]
             },
         ];
         this.options = {
@@ -822,7 +822,7 @@ module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">\n      <span> Default table</span><br>\n      <ng-dynamic-Table [options]=table (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n    <li class=\"list-group-item\">\n      <span> Table with footer</span><br>\n      <ng-dynamic-Table [options]=tableWithFooter (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n    <li class=\"list-group-item\">\n        <span>\n            <h5>Table</h5>\n            <p>- Default sorting</p>\n            <p>- Sort by multiple keys</p>\n          </span><br>\n      <!-- <span> Table with default sorting and sort by multiple columns name</span><br> -->\n      <ng-dynamic-Table [options]=tableWithSoorting (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n    <li class=\"list-group-item\">\n        <span>\n            <h5>Table</h5>\n            <p>- Search by one key</p>\n            <p>- Default placeholder</p>\n            <p>- Default message</p>\n          </span><br>\n      <!-- <span> Table with search and search by firstname with default placeholder ,default message if the record not\n        found</span><br> -->\n      <ng-dynamic-Table [options]=tableWithSearching (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n    <li class=\"list-group-item\">\n        <span>\n            <h5>Table</h5>\n            <p>- Search all keys</p>\n            <p>- Given placeholder</p>\n            <p>- Given message</p>\n          </span><br>\n      <!-- <span> Table with search and search more than one field with given placeholder, given message if the record not\n        found</span><br> -->\n\n      <ng-dynamic-Table [options]=tableWithSearchingbyMultipleName (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        Table with pagination\n\n      </span><br>\n      <ng-dynamic-Table [options]=options (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n\n  </ul>\n</div>"
+module.exports = "<div class=\"container\">\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">\n      <span> Default table</span><br>\n      <ng-dynamic-Table [options]=table (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n    <li class=\"list-group-item\">\n      <span> Table with footer</span><br>\n      <ng-dynamic-Table [options]=tableWithFooter (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n    <li class=\"list-group-item\">\n        <span>\n            <h5>Table</h5>\n            <p>- Default sorting</p>\n            <p>- Sort by multiple keys</p>\n          </span><br>\n      <!-- <span> Table with default sorting and sort by multiple columns name</span><br> -->\n      <ng-dynamic-Table [options]=tableWithSoorting (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n    <li class=\"list-group-item\">\n        <span>\n            <h5>Table</h5>\n            <p>- Search by one key</p>\n            <p>- Default placeholder</p>\n            <p>- Default message(No Data Found)</p>\n          </span><br>\n      <!-- <span> Table with search and search by firstname with default placeholder ,default message if the record not\n        found</span><br> -->\n      <ng-dynamic-Table [options]=tableWithSearching (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n    <li class=\"list-group-item\">\n        <span>\n            <h5>Table</h5>\n            <p>- Search all keys</p>\n            <p>- Given placeholder</p>\n            <p>- Set message(No Record Found)</p>\n          </span><br>\n      <!-- <span> Table with search and search more than one field with given placeholder, given message if the record not\n        found</span><br> -->\n\n      <ng-dynamic-Table [options]=tableWithSearchingbyMultipleName (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        Table with pagination\n\n      </span><br>\n      <ng-dynamic-Table [options]=options (changeEvent)=\"receiveRowValue($event)\"></ng-dynamic-Table>\n    </li>\n\n  </ul>\n</div>"
 
 /***/ }),
 
@@ -1041,7 +1041,7 @@ var DynamictableComponent = /** @class */ (function () {
             'isSearching': true,
             'searchBy': ['FirstName', 'LastName', 'Id'],
             'searchTitle': 'FirstName LastName Id',
-            'noRecord': 'No record found' // this is for the msg if records does not found
+            'noRecord': 'No Record Found' // this is for the msg if records does not found
         };
         this.tableWithSearchingbyMultipleName = {
             headerData: this.tableWithDefaultSortingandAndSortbySomeFields,

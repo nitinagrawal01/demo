@@ -37,13 +37,13 @@ export class AccordianComponent implements OnInit {
         // tslint:disable-next-line:max-line-length
         heading: 'What is Lorem Ipsum?', desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', isDisable: false, isOpen: false,
         // tslint:disable-next-line:max-line-length
-        group: [{ subHeading: ' translation by H. Rackham', isOpen: false, subDesc: 'But I must explain to you how all this mistaken idea of denouncing' }]
+        group: [{ subHeading: ' Translation by H. Rackham', isOpen: false, subDesc: 'But i must explain to you how all this mistaken idea of denouncing' }]
       },
       {
         // tslint:disable-next-line:max-line-length
         heading: '1914 translation by H. Rackham', desc: 'On the other hand, we denounce with righteous indignation and dislike men', isDisable: false, isOpen: false,
         // tslint:disable-next-line:max-line-length
-        group: [{ subHeading: 'used since the 1500', isOpen: false, subDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun' }]
+        group: [{ subHeading: 'Used since the 1500', isOpen: false, subDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun' }]
       },
 
     ];
