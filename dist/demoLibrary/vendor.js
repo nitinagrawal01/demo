@@ -71148,8 +71148,8 @@ var TableComponent = /** @class */ (function () {
         this.pagerService = pagerService;
         this.changeEvent = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.pager = {};
-        this.searchTitle = 'search';
-        this.noRecord = 'no data found';
+        this.searchTitle = 'Search';
+        this.noRecord = 'No Data Found';
         this.status = false;
     }
     TableComponent.prototype.ngOnInit = function () {
@@ -71200,7 +71200,9 @@ var TableComponent = /** @class */ (function () {
     };
     TableComponent.prototype.searchItem = function () {
         if (this.options.searchData.searchBy) {
-            this.searchBy = this.options.searchData.searchBy;
+            if (this.options.searchData.searchBy.length > 0) {
+                this.searchBy = this.options.searchData.searchBy;
+            }
         }
     };
     TableComponent.prototype.tableRowValue = function (rowValue) {
@@ -71222,8 +71224,7 @@ var TableComponent = /** @class */ (function () {
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                     selector: 'ng-dynamic-Table',
                     template: `
-                  
-                  <div class="search" *ngIf='options.searchData.isSearching'>
+                    <div class="search" *ngIf='options.searchData.isSearching'>
                     <input [(ngModel)]="serchText" placeholder="{{searchTitle}}" (keyup)='searchItem()'>
                   </div>
                   
@@ -71244,8 +71245,10 @@ var TableComponent = /** @class */ (function () {
                         <td *ngFor="let rowvalue of options.headerData;"> {{value[rowvalue.keyName]}}
                         </td>
                       </tr>
-                      <tr *ngIf="checkNoRecord(Items|searchFilter:searchBy:serchText)">
-                        {{noRecord}}
+                      <tr>
+                        <td *ngIf="checkNoRecord(Items|searchFilter:searchBy:serchText)" colspan="3">
+                        {{noRecord}}                        
+                        </td>
                       </tr>
                     </tbody>
                     <tfoot *ngIf='options.footerData'>
@@ -71280,109 +71283,108 @@ var TableComponent = /** @class */ (function () {
                   </div>
                   `,
                     styles: [`
+                   
+  input {
 
-                    input {
+    padding:3px;
+}
+table {
+    margin-top: 8px;
+}
+// .showpages{
+//     position:absolute;
 
-                        padding:3px;
-                    }
-                    table {
-                        margin-top: 8px;
-                    }
-                    // .showpages{
-                    //     position:absolute;
+// }
+.pagination {
+    display: inline-block;
+    list-style: none;
+}
 
-                    // }
-                    .pagination {
-                        display: inline-block;
-                        list-style: none;
-                    }
-                    
-                    .pagination li {
-                        color: black;
-                        float: left;
-                        padding: 8px 16px;
-                        text-decoration: none;
-                        transition: background-color .3s;
-                        border: 1px solid #ddd;
-                    }
-                    
-                    .pagination li.disabled {
-                        opacity: .4;
-                    }
-                    .pagination li.active{
-                        background-color: #3f51b5;
-                        color: white;
-                        border: 1px solid #3f51b5;
-                    }
-                    
-                    #customers {
-                        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-                        border-collapse: collapse;
-                        width: 100%;
-                    }
-                    
-                    #customers td, #customers th {
-                        border: 1px solid #ddd;
-                        padding: 8px;
-                    }
-                    
-                    #customers tr:nth-child(even){background-color: #f2f2f2;}
-                    
-                    #customers tr:hover {background-color: #ddd;}
-                    
-                    #customers th {
-                        padding-top: 10px;
-                        padding-bottom: 10px;
-                        text-align: left;
-                        background-color: #3f51b5;
-                        color: white;
-                    }
-                    
-                    .arrow-down.icon {
-                        color: white;
-                        position: absolute;
-                        margin-left: 11px;
-                        margin-top: 5px;
-                        width: 1px;
-                        height: 14px;
-                        background-color: currentColor;
-                      }
-                      .arrow-down.icon:before {
-                        content: '';
-                        position: absolute;
-                        left: -5px;
-                        top: 3px;
-                        width: 10px;
-                        height: 10px;
-                        border-top: solid 1px currentColor;
-                        border-right: solid 1px currentColor;
-                        -webkit-transform: rotate(135deg);
-                                transform: rotate(135deg);
-                      }
-                    
-                      .arrow-up.icon {
-                        color: white;
-                        position: absolute;
-                        margin-left: 11px;
-                        margin-top: 5px;
-                        width: 1px;
-                        height: 14px;
-                        background-color: currentColor;
-                      }
-                      .arrow-up.icon:before {
-                        content: '';
-                        position: absolute;
-                        left: -5px;
-                        top: 1px;
-                        width: 10px;
-                        height: 10px;
-                        border-top: solid 1px currentColor;
-                        border-right: solid 1px currentColor;
-                        -webkit-transform: rotate(-45deg);
-                                transform: rotate(-45deg);
-                      }
-                    
-                    
+.pagination li {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+}
+
+.pagination li.disabled {
+    opacity: .4;
+}
+.pagination li.active{
+    background-color: #3f51b5;
+    color: white;
+    border: 1px solid #3f51b5;
+}
+
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    background-color: #3f51b5;
+    color: white;
+}
+
+.arrow-down.icon {
+    color: white;
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 5px;
+    width: 1px;
+    height: 14px;
+    background-color: currentColor;
+  }
+  .arrow-down.icon:before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 3px;
+    width: 10px;
+    height: 10px;
+    border-top: solid 1px currentColor;
+    border-right: solid 1px currentColor;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+
+  .arrow-up.icon {
+    color: white;
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 5px;
+    width: 1px;
+    height: 14px;
+    background-color: currentColor;
+  }
+  .arrow-up.icon:before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 1px;
+    width: 10px;
+    height: 10px;
+    border-top: solid 1px currentColor;
+    border-right: solid 1px currentColor;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+     
                     `]
                 },] },
     ];
@@ -71594,6 +71596,11 @@ var CollapseComponent = /** @class */ (function () {
                     </div>
                   </ng-container>`,
                     styles: [`
+
+                    p {
+
+                        padding:10px
+                    }
                     .headingBorder {
 
                         border: 1px solid #eee;
@@ -71692,6 +71699,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _search_filter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./search.filter */ "./node_modules/ng-dynamic-autocomplete-searchfield/src/app/autocomplete-search/search.filter.js");
 /* harmony import */ var _highlightText_pipe__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./highlightText.pipe */ "./node_modules/ng-dynamic-autocomplete-searchfield/src/app/autocomplete-search/highlightText.pipe.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _hideClickOutSight__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./hideClickOutSight */ "./node_modules/ng-dynamic-autocomplete-searchfield/src/app/autocomplete-search/hideClickOutSight.js");
+
 
 
 
@@ -71705,14 +71714,15 @@ var AutocompleteSearchModule = /** @class */ (function () {
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"], args: [{
                     imports: [
                         _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
-                        _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"]
+                        _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
                     ],
                     declarations: [_searchbox_searchbox_component__WEBPACK_IMPORTED_MODULE_2__["SearchboxComponent"],
                         _search_filter__WEBPACK_IMPORTED_MODULE_3__["SearchPipe"],
-                        _highlightText_pipe__WEBPACK_IMPORTED_MODULE_4__["HighlightSearch"]
+                        _highlightText_pipe__WEBPACK_IMPORTED_MODULE_4__["HighlightSearch"],
+                        _hideClickOutSight__WEBPACK_IMPORTED_MODULE_6__["ClickOutsideDirective"]
                     ],
                     exports: [
-                        _searchbox_searchbox_component__WEBPACK_IMPORTED_MODULE_2__["SearchboxComponent"], _search_filter__WEBPACK_IMPORTED_MODULE_3__["SearchPipe"], _highlightText_pipe__WEBPACK_IMPORTED_MODULE_4__["HighlightSearch"]
+                        _searchbox_searchbox_component__WEBPACK_IMPORTED_MODULE_2__["SearchboxComponent"], _search_filter__WEBPACK_IMPORTED_MODULE_3__["SearchPipe"], _highlightText_pipe__WEBPACK_IMPORTED_MODULE_4__["HighlightSearch"], _hideClickOutSight__WEBPACK_IMPORTED_MODULE_6__["ClickOutsideDirective"]
                     ]
                 },] },
     ];
@@ -71720,6 +71730,50 @@ var AutocompleteSearchModule = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=autocomplete-search.module.js.map
+
+/***/ }),
+
+/***/ "./node_modules/ng-dynamic-autocomplete-searchfield/src/app/autocomplete-search/hideClickOutSight.js":
+/*!***********************************************************************************************************!*\
+  !*** ./node_modules/ng-dynamic-autocomplete-searchfield/src/app/autocomplete-search/hideClickOutSight.js ***!
+  \***********************************************************************************************************/
+/*! exports provided: ClickOutsideDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClickOutsideDirective", function() { return ClickOutsideDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+var ClickOutsideDirective = /** @class */ (function () {
+    function ClickOutsideDirective(_elementRef) {
+        this._elementRef = _elementRef;
+        this.clickOutside = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+    }
+    ClickOutsideDirective.prototype.onClick = function (targetElement) {
+        var clickedInside = this._elementRef.nativeElement.contains(targetElement);
+        if (!clickedInside) {
+            this.clickOutside.emit(1);
+        }
+    };
+    ClickOutsideDirective.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"], args: [{
+                    // tslint:disable-next-line:directive-selector
+                    selector: '[clickOutside]'
+                },] },
+    ];
+    /** @nocollapse */
+    ClickOutsideDirective.ctorParameters = function () { return [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] }
+    ]; };
+    ClickOutsideDirective.propDecorators = {
+        clickOutside: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+        onClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"], args: ['document:click', ['$event.target'],] }]
+    };
+    return ClickOutsideDirective;
+}());
+
+//# sourceMappingURL=hideClickOutSight.js.map
 
 /***/ }),
 
@@ -71807,12 +71861,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchboxComponent", function() { return SearchboxComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 
-
 var SearchboxComponent = /** @class */ (function () {
     function SearchboxComponent() {
         this.changeEvent = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        this.placeholder = 'search';
-        this.noRecord = 'no data found';
+        this.placeholder = 'Search';
+        this.noRecord = 'No Data Found';
         this.status = true;
     }
     SearchboxComponent.prototype.ngOnInit = function () {
@@ -71857,55 +71910,54 @@ var SearchboxComponent = /** @class */ (function () {
         });
         this.status = !this.status;
         this.searchText = selectedValue.join(' ');
+        this.searchTextValue = null;
         this.changeEvent.emit(value);
+    };
+    SearchboxComponent.prototype.onchange = function () {
+        this.searchTextValue = this.searchText;
+    };
+    SearchboxComponent.prototype.receiveRowValue = function (event) {
+        this.searchTextValue = null;
     };
     SearchboxComponent.prototype.checkNoRecord = function (data) {
         if (data.length === 0) {
-            if (this.status) {
-                return true;
-            }
-        }
-        else {
-            return false;
+            return true;
         }
     };
     SearchboxComponent.decorators = [
-        {
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                selector: 'ng-dynamic-autocompleteField',
-                template: `
-                     <input  type="search" [(ngModel)]='searchText' placeholder="{{this.placeholder}}" ng-model="search">
-                     <span ng-if="search.length" class="input-button button button-icon ion-android-close" ng-click="clearSearch()">
-                    </span>
-                    <table>
-                      <span *ngIf='searchText'>
-                        <tr *ngFor='let value of options.data|searchFilter:searchBy:searchText' (click)='searchRowValue(value)'>
-                          <td *ngFor='let n of displayBy'>
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
+                    selector: 'ng-dynamic-autocompleteField',
+                    template: `
+                    <form>
+        <input  clickOutside  type="text" [(ngModel)]='searchText'  (keyup) ='onchange()' (clickOutside)="receiveRowValue($event)" placeholder="{{this.placeholder}}" name="focus" required class="search-box" placeholder="Enter search term" />
+         <button  class="close-icon"  type="reset"></button>
+         <table>
+            <span *ngIf='searchTextValue'>
+              <tr *ngFor='let value of options.data|searchFilter:searchBy:searchTextValue' (click)='searchRowValue(value)'>
+                <td *ngFor='let n of displayBy'>
+                  <span [innerHTML]="value[n] | highlight:searchTextValue:highlightColour"></span>
+                </td>
+              </tr>
+              <tr>
+                <td *ngIf="checkNoRecord(options.data|searchFilter:searchBy:searchTextValue)" >
+                   {{noRecord}}
+                </td>
+              </tr>
+            </span>
+          </table>
+        </form>
+`,
+                    styles: [`
                     
-                            <span [innerHTML]="value[n] | highlight:searchText:highlightColour"></span>
-                    
-                          </td>
-                        </tr>
-                        <tr *ngIf="checkNoRecord(options.data|searchFilter:searchBy:searchText)">
-                          {{noRecord}}
-                        </tr>
-                      </span>
-                    </table>
-                    `,
-                styles: [`
-                    input {
-                        -webkit-appearance: button;
-                        padding: 3px;
-                    }
                     table {
                         position: absolute;
                         z-index: 2;
                         font-family: arial, sans-serif;
-                      
+                        border-collapse: collapse;
                         width: 100%;
                     }
                     
-                    td {
+                    td, th {
                         border: 1px solid #dddddd;
                         text-align: left;
                         padding: 8px;
@@ -71914,9 +71966,68 @@ var SearchboxComponent = /** @class */ (function () {
                     tr {
                         background-color: #dddddd;
                     }
-                    `]
-            },]
-        },
+                    
+                    
+                    
+                    
+                    
+                    
+                    h1 {
+                        color: green;
+                        text-align: center;
+                    }
+                    .redfamily {
+                        color: red;	
+                    }
+                    .search-box,.close-icon,.search-wrapper {
+                        position: relative;
+                        padding: 10px;
+                    }
+                    .search-wrapper {
+                        width: 500px;
+                        margin: auto;
+                        margin-top: 50px;
+                    }
+                    .search-box {
+                        width: 30%;
+                        border: 1px solid #ccc;
+                        height: 35px;
+                      
+                    }
+                
+                
+                    .close-icon {
+                        border:1px solid transparent;
+                        background-color: transparent;
+                        display: inline-block;
+                        vertical-align: middle;
+                       outline: 0;
+                       cursor: pointer;
+                    }
+                    .close-icon:after {
+                        content: "X";
+                        display: block;
+                        width: 15px;
+                        height: 15px;
+                        position: absolute;
+                        background-color: #3f51b5;
+                        z-index:1;
+                        right: 35px;
+                        top: 0;
+                       
+                        border-radius: 50%;
+                        text-align: center;
+                        color: white;
+                        font-weight: normal;
+                        font-size: 12px;
+                        box-shadow: 0 0 2px #3f51b5;
+                        cursor: pointer;
+                    }
+                    .search-box:not(:valid) ~ .close-icon {
+                        display: none;
+                    }
+                    `],
+                },] },
     ];
     /** @nocollapse */
     SearchboxComponent.ctorParameters = function () { return []; };

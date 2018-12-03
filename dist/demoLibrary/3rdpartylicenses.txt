@@ -128,7 +128,7 @@ angular-multi-single-dropdown@2.1.4
 MIT
 MIT
 
-ng-creating-dynamic-table@1.2.2
+ng-creating-dynamic-table@1.2.4
 MIT
 MIT
 
@@ -136,7 +136,7 @@ ng-dynamic-accordion@1.0.5
 MIT
 MIT
 
-ng-dynamic-autocomplete-searchfield@0.0.8
+ng-dynamic-autocomplete-searchfield@0.0.9
 MIT
 MIT
 

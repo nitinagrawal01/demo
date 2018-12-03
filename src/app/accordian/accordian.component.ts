@@ -81,7 +81,7 @@ export class AccordianComponent implements OnInit {
     this.arrayWithOneHeadingDisableFasle = [
       {
         // tslint:disable-next-line:max-line-length
-        heading: 'The Global South', desc: 'resence and minimizing the potential negative effects gain cooperation of the local people.', isDisable: false, isOpen: false,
+        heading: 'The Global South', desc: 'Resence and minimizing the potential negative effects gain cooperation of the local people.', isDisable: false, isOpen: false,
       },
       {
         // tslint:disable-next-line:max-line-length
