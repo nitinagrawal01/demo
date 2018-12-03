@@ -71989,9 +71989,9 @@ var SearchboxComponent = /** @class */ (function () {
                         margin-top: 50px;
                     }
                     .search-box {
-                        width: 30%;
+                        width: 25%;
                         border: 1px solid #ccc;
-                        height: 35px;
+                        height: 45px;
                       
                     }
                 
