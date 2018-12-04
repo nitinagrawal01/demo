@@ -18,13 +18,16 @@ export class MultiselectdropdownComponent implements OnInit {
   arrayForSingleSelect: any[];
 
   ngOnInit() {
-    this.userArray = [{ name: 'santosh', id: 1 },
-    { name: 'nitin', id: 2 },
-    { name: 'riya', id: 3 },
-    { name: 'rishi', id: 4 },
-    { name: 'muskan', id: 5 },
-    { name: 'nandini', id: 6 },
-    { name: 'krishna', id: 7 }]; // in array, Id is optional
+    this.userArray = [
+    { name: 'Ashton', id: 1 },
+      { name: 'Bradley ', id: 2 },
+      { name: 'Bruno ', id: 3 },
+      { name: 'Cara ', id: 4 },
+      { name: 'Cedric ', id: 5 },
+      { name: 'ngelica ', id: 6 },
+      { name: 'Brielle ', id: 7 }
+
+  ]; // in array, Id is optional
 
     this.options = {
       allowSearchFilter: true,  // boolean option if user want to show or hide search box in drop-down
@@ -49,12 +52,15 @@ export class MultiselectdropdownComponent implements OnInit {
     // this is for the simple multiselect
 
     this.arrayForSimpleMultiSelect = [{ name: 'santosh', id: 1 },
-    { name: 'nitin', id: 2 },
-    { name: 'riya', id: 3 },
-    { name: 'rishi', id: 4 },
-    { name: 'muskan', id: 5 },
-    { name: 'nandini', id: 6 },
-    { name: 'krishna', id: 7 }];
+    { name: 'Ashton', id: 1 },
+    { name: 'Bradley ', id: 2 },
+    { name: 'Bruno ', id: 3 },
+    { name: 'Cara ', id: 4 },
+    { name: 'Cedric ', id: 5 },
+    { name: 'ngelica ', id: 6 },
+    { name: 'Brielle ', id: 7 }
+
+  ];
     this.simpleMultiSelect = {
       allowSearchFilter: false,  // boolean option if user want to show or hide search box in drop-down
       isSelect: false,  // option if user want to show or hide selectAll/DeSelectAll button in drop-down
@@ -78,13 +84,13 @@ export class MultiselectdropdownComponent implements OnInit {
     //  this is the multiselect with filter
 
     this.arrayForMultiSelectWithFilter = [
-      { name: 'santosh', id: 1 },
-      { name: 'nitin', id: 2 },
-      { name: 'riya', id: 3 },
-      { name: 'rishi', id: 4 },
-      { name: 'muskan', id: 5 },
-      { name: 'nandini', id: 6 },
-      { name: 'krishna', id: 7 }
+      { name: 'Ashton', id: 1 },
+      { name: 'Bradley ', id: 2 },
+      { name: 'Bruno ', id: 3 },
+      { name: 'Cara ', id: 4 },
+      { name: 'Cedric ', id: 5 },
+      { name: 'ngelica ', id: 6 },
+      { name: 'Brielle ', id: 7 }
     ];
     this.MultiSelectFilter = {
       allowSearchFilter: true,  // boolean option if user want to show or hide search box in drop-down
@@ -110,13 +116,13 @@ export class MultiselectdropdownComponent implements OnInit {
     //   multiselect as a single select
 
     this.arrayForSingleSelect = [
-      { name: 'santosh', id: 1 },
-      { name: 'nitin', id: 2 },
-      { name: 'riya', id: 3 },
-      { name: 'rishi', id: 4 },
-      { name: 'muskan', id: 5 },
-      { name: 'nandini', id: 6 },
-      { name: 'krishna', id: 7 }
+      { name: 'Ashton', id: 1 },
+      { name: 'Bradley ', id: 2 },
+      { name: 'Bruno ', id: 3 },
+      { name: 'Cara ', id: 4 },
+      { name: 'Cedric ', id: 5 },
+      { name: 'ngelica ', id: 6 },
+      { name: 'Brielle ', id: 7 }
     ];
     this.multiselectAsSingleSelect = {
 

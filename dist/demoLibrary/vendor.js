@@ -70626,11 +70626,11 @@ var DropdownComponent = /** @class */ (function () {
                     <button type="button" class="buttons" id="butt" (click)="toggle = !toggle  " appOutside (closeSection)="manageDrop($event)" >
                       <ng-container *ngIf="data.length > 0; else elseSelect">
                         <ng-container *ngIf="data.length <= option.itemsShowLimit; else numberTemplate">
-                          <span *ngFor="let item of data; let last = last">{{item[option.textKey]}}
+                          <span class="buttons" *ngFor="let item of data; let last = last">{{item[option.textKey]}}
                             <span class="deletes" (click)="delete(item) ">
                               <span>x</span>
                             </span>
-                            <span *ngIf="data.length>1 && !last">, </span>
+                            <span *ngIf="data.length>1 && !last">,</span>
                           </span>
                         </ng-container>
                         <ng-template #numberTemplate>
@@ -70884,7 +70884,7 @@ var DropdownComponent = /** @class */ (function () {
                         margin-left: 5px;
                     }
                     .deletes span{
-                        font-size: 10px;
+                        font-size: 7px;
                         display: block;
                         color: #444;
                             }

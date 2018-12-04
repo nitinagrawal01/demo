@@ -1090,7 +1090,7 @@ module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <ul class=\"list-group\">\n\n\n    <li class=\"list-group-item\">\n      <Span> Multiselect with default button name</Span><br>\n      <ng-multi-select-dropdown [option]= simpleMultiSelect (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        <h5> Multiselect </h5>\n        <p>- Search </p>\n        <p>- Select or unselect all</p>\n       \n      </span><br>\n    \n      <ng-multi-select-dropdown [option]= MultiSelectFilter (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n        <span>\n            <h5> Multiselect </h5>\n            <p>- Single select </p>\n            <p>- Given placeholder</p>\n          </span><br>\n     \n      <ng-multi-select-dropdown [option]= multiselectAsSingleSelect (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        Multiselect with show items in the list\n      </span><br>\n      <ng-multi-select-dropdown [option]= options (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n\n  </ul>\n</div>"
+module.exports = "<div class=\"container\">\n  <ul class=\"list-group\">\n\n\n    <li class=\"list-group-item\">\n      <Span> Multiselect with default button name</Span><br>\n      <ng-multi-select-dropdown [option]= simpleMultiSelect (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        <h5> Multiselect </h5>\n        <p>- Search </p>\n        <p>- Select or unselect all</p>\n        <p>- Given placeholder</p>\n\n       \n      </span><br>\n    \n      <ng-multi-select-dropdown [option]= MultiSelectFilter (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n        <span>\n            <h5> Multiselect </h5>\n            <p>- Single select </p>\n          </span><br>\n     \n      <ng-multi-select-dropdown [option]= multiselectAsSingleSelect (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        Multiselect with show items in the list\n      </span><br>\n      <ng-multi-select-dropdown [option]= options (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n\n  </ul>\n</div>"
 
 /***/ }),
 
@@ -1118,13 +1118,15 @@ var MultiselectdropdownComponent = /** @class */ (function () {
         this.selectedItems = [];
     }
     MultiselectdropdownComponent.prototype.ngOnInit = function () {
-        this.userArray = [{ name: 'santosh', id: 1 },
-            { name: 'nitin', id: 2 },
-            { name: 'riya', id: 3 },
-            { name: 'rishi', id: 4 },
-            { name: 'muskan', id: 5 },
-            { name: 'nandini', id: 6 },
-            { name: 'krishna', id: 7 }]; // in array, Id is optional
+        this.userArray = [
+            { name: 'Ashton', id: 1 },
+            { name: 'Bradley ', id: 2 },
+            { name: 'Bruno ', id: 3 },
+            { name: 'Cara ', id: 4 },
+            { name: 'Cedric ', id: 5 },
+            { name: 'ngelica ', id: 6 },
+            { name: 'Brielle ', id: 7 }
+        ]; // in array, Id is optional
         this.options = {
             allowSearchFilter: true,
             isSelect: true,
@@ -1145,12 +1147,14 @@ var MultiselectdropdownComponent = /** @class */ (function () {
         };
         // this is for the simple multiselect
         this.arrayForSimpleMultiSelect = [{ name: 'santosh', id: 1 },
-            { name: 'nitin', id: 2 },
-            { name: 'riya', id: 3 },
-            { name: 'rishi', id: 4 },
-            { name: 'muskan', id: 5 },
-            { name: 'nandini', id: 6 },
-            { name: 'krishna', id: 7 }];
+            { name: 'Ashton', id: 1 },
+            { name: 'Bradley ', id: 2 },
+            { name: 'Bruno ', id: 3 },
+            { name: 'Cara ', id: 4 },
+            { name: 'Cedric ', id: 5 },
+            { name: 'ngelica ', id: 6 },
+            { name: 'Brielle ', id: 7 }
+        ];
         this.simpleMultiSelect = {
             allowSearchFilter: false,
             isSelect: false,
@@ -1171,13 +1175,13 @@ var MultiselectdropdownComponent = /** @class */ (function () {
         };
         //  this is the multiselect with filter
         this.arrayForMultiSelectWithFilter = [
-            { name: 'santosh', id: 1 },
-            { name: 'nitin', id: 2 },
-            { name: 'riya', id: 3 },
-            { name: 'rishi', id: 4 },
-            { name: 'muskan', id: 5 },
-            { name: 'nandini', id: 6 },
-            { name: 'krishna', id: 7 }
+            { name: 'Ashton', id: 1 },
+            { name: 'Bradley ', id: 2 },
+            { name: 'Bruno ', id: 3 },
+            { name: 'Cara ', id: 4 },
+            { name: 'Cedric ', id: 5 },
+            { name: 'ngelica ', id: 6 },
+            { name: 'Brielle ', id: 7 }
         ];
         this.MultiSelectFilter = {
             allowSearchFilter: true,
@@ -1193,19 +1197,19 @@ var MultiselectdropdownComponent = /** @class */ (function () {
                 closeButtonName: '',
                 selectAllButtonName: 'Select All',
                 unSelectAllButtonName: 'UnSelect All',
-                searchPlaceHolder: 'Search drop-down items' // user can change or edit search placehoder
+                searchPlaceHolder: 'Search items' // user can change or edit search placehoder
             },
             disableDropdown: false // disable dropdown
         };
         //   multiselect as a single select
         this.arrayForSingleSelect = [
-            { name: 'santosh', id: 1 },
-            { name: 'nitin', id: 2 },
-            { name: 'riya', id: 3 },
-            { name: 'rishi', id: 4 },
-            { name: 'muskan', id: 5 },
-            { name: 'nandini', id: 6 },
-            { name: 'krishna', id: 7 }
+            { name: 'Ashton', id: 1 },
+            { name: 'Bradley ', id: 2 },
+            { name: 'Bruno ', id: 3 },
+            { name: 'Cara ', id: 4 },
+            { name: 'Cedric ', id: 5 },
+            { name: 'ngelica ', id: 6 },
+            { name: 'Brielle ', id: 7 }
         ];
         this.multiselectAsSingleSelect = {
             allowSearchFilter: true,
