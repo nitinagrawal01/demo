@@ -36,11 +36,11 @@ export class MultiselectdropdownComponent implements OnInit {
       itemsShowLimit: 5,  // option if user want to show minimum 3 selected data in drop-down button
       addCssClass: '',  // By using this user can add CSS class in drop-down
       texts: {
-        selectPlaceHolder: 'select items',  // This is placeholder of drop-down, if user set empty then default placeholder will be showed
+        selectPlaceHolder: 'Select Items',  // This is placeholder of drop-down, if user set empty then default placeholder will be showed
         closeButtonName: '',  // user can change close button name by passing name, default it set close
         selectAllButtonName: 'Select All',  // user can change or edit select All button name
         unSelectAllButtonName: 'UnSelect All',  // user can change or edit Unselect All button name
-        searchPlaceHolder: 'Search drop-down items' // user can change or edit search placehoder
+        searchPlaceHolder: 'Search items' // user can change or edit search placehoder
       },
       disableDropdown: false// disable dropdown
     };
@@ -69,7 +69,7 @@ export class MultiselectdropdownComponent implements OnInit {
         closeButtonName: '',  // user can change close button name by passing name, default it set close
         selectAllButtonName: 'Select All',  // user can change or edit select All button name
         unSelectAllButtonName: 'UnSelect All',  // user can change or edit Unselect All button name
-        searchPlaceHolder: 'Search drop-down items' // user can change or edit search placehoder
+        searchPlaceHolder: 'Search items' // user can change or edit search placehoder
       },
       disableDropdown: false // disable dropdown
 
@@ -96,7 +96,7 @@ export class MultiselectdropdownComponent implements OnInit {
       // itemsShowLimit: 3,  // option if user want to show minimum 3 selected data in drop-down button
       addCssClass: '',  // By using this user can add CSS class in drop-down
       texts: {
-        selectPlaceHolder: 'select items',  // This is placeholder of drop-down, if user set empty then default placeholder will be showed
+        selectPlaceHolder: 'Select Items',  // This is placeholder of drop-down, if user set empty then default placeholder will be showed
         closeButtonName: '',  // user can change close button name by passing name, default it set close
         selectAllButtonName: 'Select All',  // user can change or edit select All button name
         unSelectAllButtonName: 'UnSelect All',  // user can change or edit Unselect All button name
@@ -129,7 +129,7 @@ export class MultiselectdropdownComponent implements OnInit {
       // itemsShowLimit: 3,  // option if user want to show minimum 3 selected data in drop-down button
       addCssClass: '',  // By using this user can add CSS class in drop-down
       texts: {
-        selectPlaceHolder: 'select items',  // This is placeholder of drop-down, if user set empty then default placeholder will be showed
+        selectPlaceHolder: 'Select Items',  // This is placeholder of drop-down, if user set empty then default placeholder will be showed
         closeButtonName: '',  // user can change close button name by passing name, default it set close
         selectAllButtonName: 'Select All',  // user can change or edit select All button name
         unSelectAllButtonName: 'UnSelect All',  // user can change or edit Unselect All button name

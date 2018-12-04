@@ -70424,7 +70424,7 @@ var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('6.1.10'
 /*!*************************************************************!*\
   !*** ./node_modules/angular-multi-single-dropdown/index.js ***!
   \*************************************************************/
-/*! exports provided: multiSingleDropDownModule, SearchPipe, DropdownComponent */
+/*! exports provided: multiSingleDropDownModule, SearchPipe, DropdownComponent, OutsideDirective */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -70438,10 +70438,74 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_app_multiSingleDropDown_dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./src/app/multiSingleDropDown/dropdown/dropdown.component */ "./node_modules/angular-multi-single-dropdown/src/app/multiSingleDropDown/dropdown/dropdown.component.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DropdownComponent", function() { return _src_app_multiSingleDropDown_dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_2__["DropdownComponent"]; });
 
+/* harmony import */ var _src_app_multiSingleDropDown_directive_outside_directive__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./src/app/multiSingleDropDown/directive/outside.directive */ "./node_modules/angular-multi-single-dropdown/src/app/multiSingleDropDown/directive/outside.directive.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OutsideDirective", function() { return _src_app_multiSingleDropDown_directive_outside_directive__WEBPACK_IMPORTED_MODULE_3__["OutsideDirective"]; });
+
+
 
 
 
 //# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/angular-multi-single-dropdown/src/app/multiSingleDropDown/directive/outside.directive.js":
+/*!***************************************************************************************************************!*\
+  !*** ./node_modules/angular-multi-single-dropdown/src/app/multiSingleDropDown/directive/outside.directive.js ***!
+  \***************************************************************************************************************/
+/*! exports provided: OutsideDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OutsideDirective", function() { return OutsideDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+var OutsideDirective = /** @class */ (function () {
+    function OutsideDirective(elementRef) {
+        this.elementRef = elementRef;
+        this.flag = false;
+        this.closeSection = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.appOutside = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+    }
+    OutsideDirective.prototype.onDocumentClick = function (event) {
+        this.targetElement = event.target;
+        this.flag = false;
+        if (this.targetElement && !this.elementRef.nativeElement.contains(this.targetElement)) {
+            if ((this.flag === false) && (this.targetElement.className === 'buttons')) {
+                this.flag = true;
+                this.closeSection.emit(this.flag);
+                return false;
+            }
+            else if ((this.flag) && (this.targetElement.className === 'buttons')) {
+                this.flag = false;
+                this.closeSection.emit(this.flag);
+                return false;
+            }
+            else {
+                this.flag = true;
+                this.appOutside.emit(this.flag);
+            }
+        }
+    };
+    OutsideDirective.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"], args: [{
+                    selector: '[appOutside]'
+                },] },
+    ];
+    /** @nocollapse */
+    OutsideDirective.ctorParameters = function () { return [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] }
+    ]; };
+    OutsideDirective.propDecorators = {
+        closeSection: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+        appOutside: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+        onDocumentClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"], args: ['document:click', ['$event'],] }]
+    };
+    return OutsideDirective;
+}());
+
+//# sourceMappingURL=outside.directive.js.map
 
 /***/ }),
 
@@ -70549,267 +70613,287 @@ var DropdownComponent = /** @class */ (function () {
         });
         this.toggle = true;
     };
+    DropdownComponent.prototype.closeDropdown = function (flag) {
+        this.toggle = true;
+    };
+    DropdownComponent.prototype.manageDrop = function (flag) {
+        this.toggle = flag;
+    };
     DropdownComponent.decorators = [
-        {
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
-                selector: 'ng-multi-select-dropdown',
-                template: `<div  [ngClass]="option.addCssClass">
-            <button type="button" class="buttons" (click)="toggle = !toggle" >
-              <ng-container *ngIf="data.length > 0; else elseSelect">
-                <ng-container *ngIf="data.length <= option.itemsShowLimit; else numberTemplate">
-                  <span *ngFor="let item of data; let last = last">{{item[option.textKey]}}<span class="deletes" (click)="delete(item) ">
-                    <span class="deleteButton">x</span>
-                    </span>
-                    <span *ngIf="data.length>1 && !last">, </span>
-                  </span>
-                </ng-container>
-                <ng-template #numberTemplate>
-                  {{data.length}} Selected
-                </ng-template>
-          
-              </ng-container>
-              <ng-template #elseSelect>
-                <ng-container *ngIf="option.texts.selectPlaceHolder; else elsePlace">
-                  {{option.texts.selectPlaceHolder}}
-                </ng-container>
-                <ng-template #elsePlace>
-                  Select 
-                </ng-template>
-              </ng-template>
-            </button>
-          
-            <div   class="rows"  [hidden]= "toggle"  *ngIf="option.array.length > 0">
-              <div class="columns">
-                  <div class="cards">
-                <div class="searchDivs" *ngIf="option.allowSearchFilter == true">
-                  <input type="search" class="searchs" placeholder="{{option.texts.searchPlaceHolder}}" [(ngModel)]="searchText">
-                </div>
-          
-                <div class="selectDivs" *ngIf="option.isSelect == true && option.isMultiSelectOrSingleSelect === true && option.disableDropdown == false">
-                  <input type="button" class="buttons" value="{{option.texts.selectAllButtonName}}" (click)="selectAll(option.array)">
-                  <input type="button" class="buttons" value="{{option.texts.unSelectAllButtonName}}" (click)="unSelectAll(option.array)">
-                </div> 
-          
-              <ng-container *ngIf="option.isMultiSelectOrSingleSelect === true ; else elseTemplate">
-                <div class="checkBoxDivs"  *ngFor="let item of option.array|search:searchText:option">
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
+                    selector: 'ng-multi-select-dropdown',
+                    template: `<div [ngClass]="option.addCssClass">
+                    <button type="button" class="buttons" id="butt" (click)="toggle = !toggle  " appOutside (closeSection)="manageDrop($event)" >
+                      <ng-container *ngIf="data.length > 0; else elseSelect">
+                        <ng-container *ngIf="data.length <= option.itemsShowLimit; else numberTemplate">
+                          <span *ngFor="let item of data; let last = last">{{item[option.textKey]}}
+                            <span class="deletes" (click)="delete(item) ">
+                              <span>x</span>
+                            </span>
+                            <span *ngIf="data.length>1 && !last">, </span>
+                          </span>
+                        </ng-container>
+                        <ng-template #numberTemplate>
+                          {{data.length}} Selected
+                        </ng-template>
                   
-                      <label class="containers" >
-                    <input type="checkbox" name="check" [disabled] = option.disableDropdown  [(ngModel)]="item.checked" (change)="getData($event, item)" [value]="item[option.valueKey]">{{item[option.textKey]}}
-                    <span class="checkmarks"></span>  
-                  </label>
-                </div>
-              </ng-container>
-          
-              <ng-template #elseTemplate>
-                <div class="table-divs checkBoxDivs">
-                  <table>
-                    <tr *ngFor="let entity of option.array | search:searchText:option ; let index = index">
-                      <td>
-                          <label class="containers">
-                        <input type="checkbox" [(ngModel)]="entity.checked" [value]="entity[option.valueKey]" (click)="updateSelection(index, option.array, $event, entity )" />{{entity[option.textKey]}}
-                        <span class="checkmarks"></span> 
-                      </label>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </ng-template>
-          
-              <ng-container *ngIf="option.texts.closeButtonName; else elseButton">
-                  <div class="selectDivs close" (click)="clear()">
-                      <button class="buttons selectDivs" (click)="toggle = !toggle">{{option.texts.closeButtonName}} </button>
+                      </ng-container>
+                      <ng-template #elseSelect>
+                        <ng-container *ngIf="option.texts.selectPlaceHolder; else elsePlace">
+                          {{option.texts.selectPlaceHolder}}
+                        </ng-container>
+                        <ng-template #elsePlace>
+                          Select
+                        </ng-template>
+                      </ng-template>
+                    </button>
+                  
+                    <div class="rows" id="warning-container"    *ngIf="option.array.length > 0">
+                      <div class="columns">
+                        <div class="cards" [hidden]="toggle" id="do" (appOutside)="closeDropdown($event)">
+                          <div class="searchDivs" *ngIf="option.allowSearchFilter == true">
+                            <input type="search" class="searchs" placeholder="{{option.texts.searchPlaceHolder}}" [(ngModel)]="searchText">
+                          </div>
+                  
+                          <div class="selectDivs" *ngIf="option.isSelect == true && option.isMultiSelectOrSingleSelect === true && option.disableDropdown == false">
+                            <input type="button" class="buttons1" value="{{option.texts.selectAllButtonName}}" (click)="selectAll(option.array)">
+                            <input type="button" class="buttons1" value="{{option.texts.unSelectAllButtonName}}" (click)="unSelectAll(option.array)">
+                          </div>
+                  
+                          <ng-container *ngIf="option.isMultiSelectOrSingleSelect === true ; else elseTemplate">
+                            <div class="checkBoxDivs" *ngFor="let item of option.array|search:searchText:option">
+                  
+                              <label class="containers">
+                                <input type="checkbox" name="check" [disabled]= option.disableDropdown [(ngModel)]="item.checked" (change)="getData($event, item)"
+                                  [value]="item[option.valueKey]">{{item[option.textKey]}}
+                                <span class="checkmarks"></span>
+                              </label>
+                            </div>
+                          </ng-container>
+                  
+                          <ng-template #elseTemplate>
+                            <div class="table-divs checkBoxDivs">
+                              <table>
+                                <tr *ngFor="let entity of option.array | search:searchText:option ; let index = index">
+                                  <td>
+                                    <label class="containers">
+                                      <input type="checkbox" [(ngModel)]="entity.checked" [value]="entity[option.valueKey]" (click)="updateSelection(index, option.array, $event, entity )"
+                                      />{{entity[option.textKey]}}
+                                      <span class="checkmarks"></span>
+                                    </label>
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+                          </ng-template>
+                  
+                          <ng-container *ngIf="option.texts.closeButtonName; else elseButton">
+                            <div class="selectDivs close" (click)="clear($event)">
+                              <button class="buttons selectDivs" (click)="toggle = !toggle">{{option.texts.closeButtonName}} </button>
+                            </div>
+                          </ng-container>
+                  
+                          <ng-template #elseButton>
+                            <div class="selectDivs close" (click)="clear($event)">
+                              <button type="button" class="buttons selectDivs" (click)="toggle = !toggle">close </button>
+                            </div>
+                          </ng-template>
+                        </div>
+                      </div>
                     </div>
-              </ng-container>
-          
-              <ng-template #elseButton>
-                <div class="selectDivs close" (click)="clear()">
-                <button type="button" class="buttons selectDivs" (click)="toggle = !toggle">close </button>
-              </div>
-              </ng-template>
-              </div>
-            </div>
-          </div>
-          </div>`,
-                styles: [`/* The container */
-          .containers {
-              display: block;
-              position: relative;
-              padding-left: 25px;
-              margin-bottom: 1px;
-              cursor: pointer;
-              font-size: 18px;
-          }
-          
-          /* Hide the browser's default checkbox */
-          .containers input {
-              position: absolute;
-              opacity: 0;
-              cursor: pointer;
-          }
-          
-          /* Create a custom checkbox */
-          .checkmarks {
-              position: absolute;
-              top: 0;
-              left: 0;
-              height: 16px;
-              width: 16px;
-              background-color: #eee;
-          }
-          
-          /* On mouse-over, add a grey background color */
-          .containers:hover input ~ .checkmarks {
-              background-color: #ccc;
-          }
-          
-          /* When the checkbox is checked, add a blue background */
-          .containers input:checked ~ .checkmarks {
-              background-color: #3f51b5;
-          }
-          
-          /* Create the checkmark/indicator (hidden when not checked) */
-          .checkmarks:after {
-              content: "";
-              position: absolute;
-              display: none;
-          }
-          
-          /* Show the checkmark when checked */
-          .containers input:checked ~ .checkmarks:after {
-              display: block;
-          }
-          
-          /* Style the checkmark/indicator */
-          .containers .checkmarks:after {
-            left: 6px;
-            top: 2px;
-            width: 6px;
-            height: 10px;
-            border: solid white;
-            border-width: 0 3px 3px 0px;
-            -webkit-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
-              
-          }
-          
-          * {
-            box-sizing: border-box;
-          }
-          
-          
-          
-          /* Float four columns side by side */
-          .columns {
-              float: auto;
-              width: 18%;
-              padding: 0 5px;
-          }
-          
-          .rows {margin: 0 -5px;}
-          
-          /* Clear floats after the columns */
-          .rows:after {
-            content: "";
-            display: table;
-            clear: both;
-          }
-          
-          /* Responsive columns */
-          @media screen and (max-width: 600px) {
-            .columns {
-              width: 100%;
-              display: block;
-              margin-bottom: 10px;
-            }
-          }
-          
-          /* Style the counter cards */
-          .cards {
-              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-              padding: 0 0 0 0;
-              background-color: white;
-              border: 1px solid #ddd;
-              width: 175px;
-              position:absolute;
-              z-index: 2;
-          }
-          .buttons {
-              background:#3f51b5;
-              border: none;
-              color: white;
-              padding: 5px 10px;
-              text-align: center;
-              text-decoration: none;
-              display: inline-block;
-              font-size: 15px;
-              cursor: pointer;
-              
-          }
-          
-          .searchs {
-              width: 100%;
-              height: 35px;
-              padding-left: 10px;
-              border: 1px solid #eee;
-          }
-          
-          .searchDivs {
-              width: 100%;
-              margin-bottom: 10px;
-          }
-          
-          .table-divs{
-              margin-left: 10px;
-          }
-          
-          .selectDivs {
-              text-align: center;
-              margin: 10px 0 10px 0px;
-              float:initial;
-          }
-          
-          .checkBoxDivs {
-              margin-left: 10px;
-              text-align: left;
-          }
-          
-          .selectDivs .buttons{
-              padding: 5px 10px;
-              font-size: 12px;
-              margin-right: 5px;
-              margin-left: 5px;
-          }
-          
-          .selectDivs.close{
-              margin: 0px;
-          }
-          
-          .deletes{
-              
-              background: #FFF;
-              border: 1px solid;
-              border-radius: 20px;
-              display: inline-block;
-              width: 12px;
-              height: 12px;
-              margin-left: 5px;
-          }
-          .deletes span{
-              font-size: 10px;
-              display: block;
-              color: #444;
-                  }
-
-                  .deleteButton{
-                    bottom: 32px;
-                    padding: 0px;
-                    margin: -2px;
-                  }
-          
-          `]
-            },]
-        },
+                  </div>`,
+                    styles: [`/* The container */
+                    .containers {
+                        display: block;
+                        position: relative;
+                        padding-left: 25px;
+                        margin-bottom: 1px;
+                        cursor: pointer;
+                        font-size: 18px;
+                    }
+                    
+                    /* Hide the browser's default checkbox */
+                    .containers input {
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                    }
+                    
+                    /* Create a custom checkbox */
+                    .checkmarks {
+                        position: absolute;
+                        top: 7px;
+                        left: 0;
+                        height: 16px;
+                        width: 16px;
+                        background-color: #eee;
+                    }
+                    
+                    /* On mouse-over, add a grey background color */
+                    .containers:hover input ~ .checkmarks {
+                        background-color: #ccc;
+                    }
+                    
+                    /* When the checkbox is checked, add a blue background */
+                    .containers input:checked ~ .checkmarks {
+                        background-color:#3f51b5;
+                    }
+                    
+                    /* Create the checkmark/indicator (hidden when not checked) */
+                    .checkmarks:after {
+                        content: "";
+                        position: absolute;
+                        display: none;
+                    }
+                    
+                    /* Show the checkmark when checked */
+                    .containers input:checked ~ .checkmarks:after {
+                        display: block;
+                    }
+                    
+                    /* Style the checkmark/indicator */
+                    .containers .checkmarks:after {
+                        left: 6px;
+                        top: 1px;
+                        width: 7px;
+                        height: 12px;
+                        border: solid white;
+                        border-width: 0 3px 3px 0;
+                        -webkit-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                    }
+                    
+                    * {
+                      box-sizing: border-box;
+                    }
+                    
+                    
+                    
+                    /* Float four columns side by side */
+                    .columns {
+                        float: auto;
+                        width: 18%;
+                        padding: 0 5px;
+                    }
+                    
+                    .rows {margin: 0 -5px;}
+                    
+                    /* Clear floats after the columns */
+                    .rows:after {
+                      content: "";
+                      display: table;
+                      clear: both;
+                    }
+                    
+                    /* Responsive columns */
+                    @media screen and (max-width: 600px) {
+                      .columns {
+                        width: 100%;
+                        display: block;
+                        margin-bottom: 10px;
+                      }
+                    }
+                    
+                    /* Style the counter cards */
+                    .cards {
+                        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                        padding: 0 0 0 0;
+                        background-color: white;
+                        border: 1px solid #ddd;
+                        cursor:pointer;
+                        width:175px;
+                        height:auto;
+                        position: absolute;
+                        z-index: 2;
+                    }
+                    .buttons {
+                        background:#3f51b5;
+                        border: none;
+                        color: white;
+                        padding: 5px 10px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 15px;
+                        cursor: pointer;
+                    }
+                    
+                    .buttons1 {
+                        background: #3f51b5;
+                        border: 0px;
+                        color: white;
+                        padding: 7px 4px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 13px;
+                        cursor: pointer;
+                        width: 82px;
+                        margin: 2px;
+                    }
+                    
+                    .searchs {
+                        width: 100%;
+                        height: 35px;
+                        padding-left: 10px;
+                        border: 1px solid #eee;
+                    }
+                    
+                    .searchDivs {
+                        width: 100%;
+                        margin-bottom: 10px;
+                    }
+                    
+                    .table-divs{
+                        margin-left: 10px;
+                    }
+                    
+                    .selectDivs {
+                        text-align: center;
+                        margin: 10px 0 10px 0px;
+                    }
+                    
+                    .checkBoxDivs {
+                        margin-left: 10px;
+                        text-align: left;
+                    }
+                    
+                    .selectDivs .buttons{
+                        padding: 5px 10px;
+                        font-size: 12px;
+                        margin-right: 5px;
+                        margin-left: 5px;
+                    }
+                    
+                    .selectDivs.close{
+                        margin: 0px;
+                        float:none;
+                      opacity: 1; 
+                       
+                    }
+                    
+                    .deletes{
+                        
+                        background: #FFF;
+                        border: 1px solid;
+                        border-radius: 20px;
+                        display: inline-block;
+                        width: 12px;
+                        height: 12px;
+                        margin-left: 5px;
+                    }
+                    .deletes span{
+                        font-size: 10px;
+                        display: block;
+                        color: #444;
+                            }
+                    
+                    
+                    
+                    
+                    `]
+                },] },
     ];
     /** @nocollapse */
     DropdownComponent.ctorParameters = function () { return []; };
@@ -70839,6 +70923,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _pipe_search_pipe__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pipe/search.pipe */ "./node_modules/angular-multi-single-dropdown/src/app/multiSingleDropDown/pipe/search.pipe.js");
 /* harmony import */ var _dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dropdown/dropdown.component */ "./node_modules/angular-multi-single-dropdown/src/app/multiSingleDropDown/dropdown/dropdown.component.js");
+/* harmony import */ var _directive_outside_directive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./directive/outside.directive */ "./node_modules/angular-multi-single-dropdown/src/app/multiSingleDropDown/directive/outside.directive.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+
+
 
 
 
@@ -70851,11 +70939,12 @@ var multiSingleDropDownModule = /** @class */ (function () {
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"], args: [{
                     imports: [
                         _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
-                        _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"]
+                        _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
+                        _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__["BrowserModule"]
                     ],
-                    declarations: [_dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_4__["DropdownComponent"], _pipe_search_pipe__WEBPACK_IMPORTED_MODULE_3__["SearchPipe"]],
+                    declarations: [_dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_4__["DropdownComponent"], _pipe_search_pipe__WEBPACK_IMPORTED_MODULE_3__["SearchPipe"], _directive_outside_directive__WEBPACK_IMPORTED_MODULE_5__["OutsideDirective"]],
                     exports: [
-                        _dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_4__["DropdownComponent"], _pipe_search_pipe__WEBPACK_IMPORTED_MODULE_3__["SearchPipe"]
+                        _dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_4__["DropdownComponent"], _pipe_search_pipe__WEBPACK_IMPORTED_MODULE_3__["SearchPipe"], _directive_outside_directive__WEBPACK_IMPORTED_MODULE_5__["OutsideDirective"]
                     ]
                 },] },
     ];

@@ -369,7 +369,7 @@ module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">\n        <!-- <span>\n            <h5>Auto-comple</h5>\n            <p>- Animation fast, fadeIn</p>\n            <p>- Show next or prev as later or earlier</p>\n          </span><br> -->\n      <span> Auto-complete search by one key</span><br>\n      <ng-dynamic-autocompleteField [options]=dataByFirstNameDisplayByLastName (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n    </li>\n     <li class=\"list-group-item\">\n         \n      <span>  Auto-complete search by all keys</span><br>\n      <ng-dynamic-autocompleteField [options]=dataByAllFieldAndSearchByallField (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n\n    </li>\n    <li class=\"list-group-item\">\n        <span> Auto-complete search with default highlight color</span><br>\n      <!-- <span>Search with default highlight color</span><br> -->\n      <ng-dynamic-autocompleteField [options]=dataWithDefaultHighlightColor (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n    </li>\n    <li class=\"list-group-item\">\n      <span>Auto-complete search with given highlight color</span><br>\n      <ng-dynamic-autocompleteField [options]=options (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n    </li> \n  </ul>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">\n      <span> Auto-complete search by one key</span><br>\n      <ng-dynamic-autocompleteField [options]=dataByFirstNameDisplayByLastName (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n    </li>\n     <li class=\"list-group-item\">\n         \n      <span>  Auto-complete search by all keys</span><br>\n      <ng-dynamic-autocompleteField [options]=dataByAllFieldAndSearchByallField (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n\n    </li>\n    <li class=\"list-group-item\">\n        <span> Auto-complete search with default highlight color</span><br>\n      <!-- <span>Search with default highlight color</span><br> -->\n      <ng-dynamic-autocompleteField [options]=dataWithDefaultHighlightColor (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n    </li>\n    <li class=\"list-group-item\">\n      <span>Auto-complete search with given highlight color</span><br>\n      <ng-dynamic-autocompleteField [options]=options (changeEvent)=\"receiveRowValue($event)\">\n      </ng-dynamic-autocompleteField>\n    </li> \n  </ul>\n</div>\n"
 
 /***/ }),
 
@@ -1090,7 +1090,7 @@ module.exports = "span {\r\n    padding-top: 8px;\r\n    padding-bottom: 8px;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <ul class=\"list-group\">\n\n\n    <li class=\"list-group-item\">\n      <Span> Multiselect with default button name</Span><br>\n      <ng-multi-select-dropdown [option]=simpleMultiSelect (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        <h5> Multiselect </h5>\n        <p>- Search </p>\n        <p>- Select or unselect all</p>\n       \n      </span><br>\n      <!-- <span>\n        Multiselect with filter with select all or unselect all\n      </span><br> -->\n      <ng-multi-select-dropdown [option]=MultiSelectFilter (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n        <span>\n            <h5> Multiselect </h5>\n            <p>- Single select </p>\n            <p>- Given placeholder</p>\n          </span><br>\n      <!-- <span>\n        Multiselect as a single select given placeholder name\n\n      </span><br> -->\n      <ng-multi-select-dropdown [option]=multiselectAsSingleSelect (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        Multiselect with show items in the list\n      </span><br>\n      <ng-multi-select-dropdown [option]=options (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n\n  </ul>\n</div>"
+module.exports = "<div class=\"container\">\n  <ul class=\"list-group\">\n\n\n    <li class=\"list-group-item\">\n      <Span> Multiselect with default button name</Span><br>\n      <ng-multi-select-dropdown [option]= simpleMultiSelect (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        <h5> Multiselect </h5>\n        <p>- Search </p>\n        <p>- Select or unselect all</p>\n       \n      </span><br>\n    \n      <ng-multi-select-dropdown [option]= MultiSelectFilter (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n        <span>\n            <h5> Multiselect </h5>\n            <p>- Single select </p>\n            <p>- Given placeholder</p>\n          </span><br>\n     \n      <ng-multi-select-dropdown [option]= multiselectAsSingleSelect (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n    <li class=\"list-group-item\">\n      <span>\n        Multiselect with show items in the list\n      </span><br>\n      <ng-multi-select-dropdown [option]= options (messageEvent)='onItemSelect($event)'>\n      </ng-multi-select-dropdown>\n    </li>\n\n  </ul>\n</div>"
 
 /***/ }),
 
@@ -1135,11 +1135,11 @@ var MultiselectdropdownComponent = /** @class */ (function () {
             itemsShowLimit: 5,
             addCssClass: '',
             texts: {
-                selectPlaceHolder: 'select items',
+                selectPlaceHolder: 'Select Items',
                 closeButtonName: '',
                 selectAllButtonName: 'Select All',
                 unSelectAllButtonName: 'UnSelect All',
-                searchPlaceHolder: 'Search drop-down items' // user can change or edit search placehoder
+                searchPlaceHolder: 'Search items' // user can change or edit search placehoder
             },
             disableDropdown: false // disable dropdown
         };
@@ -1165,7 +1165,7 @@ var MultiselectdropdownComponent = /** @class */ (function () {
                 closeButtonName: '',
                 selectAllButtonName: 'Select All',
                 unSelectAllButtonName: 'UnSelect All',
-                searchPlaceHolder: 'Search drop-down items' // user can change or edit search placehoder
+                searchPlaceHolder: 'Search items' // user can change or edit search placehoder
             },
             disableDropdown: false // disable dropdown
         };
@@ -1189,7 +1189,7 @@ var MultiselectdropdownComponent = /** @class */ (function () {
             // itemsShowLimit: 3,  // option if user want to show minimum 3 selected data in drop-down button
             addCssClass: '',
             texts: {
-                selectPlaceHolder: 'select items',
+                selectPlaceHolder: 'Select Items',
                 closeButtonName: '',
                 selectAllButtonName: 'Select All',
                 unSelectAllButtonName: 'UnSelect All',
@@ -1217,7 +1217,7 @@ var MultiselectdropdownComponent = /** @class */ (function () {
             // itemsShowLimit: 3,  // option if user want to show minimum 3 selected data in drop-down button
             addCssClass: '',
             texts: {
-                selectPlaceHolder: 'select items',
+                selectPlaceHolder: 'Select Items',
                 closeButtonName: '',
                 selectAllButtonName: 'Select All',
                 unSelectAllButtonName: 'UnSelect All',

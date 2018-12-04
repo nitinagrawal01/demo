@@ -124,7 +124,7 @@ MIT
 MIT
 MIT
 
-angular-multi-single-dropdown@2.1.4
+angular-multi-single-dropdown@2.1.7
 MIT
 MIT
 
