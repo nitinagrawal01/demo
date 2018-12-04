@@ -100,7 +100,7 @@ export class MultiselectdropdownComponent implements OnInit {
         closeButtonName: '',  // user can change close button name by passing name, default it set close
         selectAllButtonName: 'Select All',  // user can change or edit select All button name
         unSelectAllButtonName: 'UnSelect All',  // user can change or edit Unselect All button name
-        searchPlaceHolder: 'Search drop-down items' // user can change or edit search placehoder
+        searchPlaceHolder: 'Search items' // user can change or edit search placehoder
       },
       disableDropdown: false // disable dropdown
 
