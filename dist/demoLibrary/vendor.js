@@ -70622,7 +70622,9 @@ var DropdownComponent = /** @class */ (function () {
     DropdownComponent.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                     selector: 'ng-multi-select-dropdown',
-                    template: `<div [ngClass]="option.addCssClass">
+                    template: `
+                    <container *ngIf="">
+                    <div [ngClass]="option.addCssClass">
                     <button type="button" class="buttons" id="butt" (click)="toggle = !toggle  " appOutside (closeSection)="manageDrop($event)" >
                       <ng-container *ngIf="data.length > 0; else elseSelect">
                         <ng-container *ngIf="data.length <= option.itemsShowLimit; else numberTemplate">
@@ -70701,7 +70703,9 @@ var DropdownComponent = /** @class */ (function () {
                         </div>
                       </div>
                     </div>
-                  </div>`,
+                  </div>
+                  </container>`
+                  ,
                     styles: [`/* The container */
                     .containers {
                         display: block;
