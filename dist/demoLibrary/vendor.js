@@ -70623,17 +70623,16 @@ var DropdownComponent = /** @class */ (function () {
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                     selector: 'ng-multi-select-dropdown',
                     template: `
-                    <container *ngIf="">
                     <div [ngClass]="option.addCssClass">
                     <button type="button" class="buttons" id="butt" (click)="toggle = !toggle  " appOutside (closeSection)="manageDrop($event)" >
                       <ng-container *ngIf="data.length > 0; else elseSelect">
                         <ng-container *ngIf="data.length <= option.itemsShowLimit; else numberTemplate">
-                          <span class="buttons" *ngFor="let item of data; let last = last">{{item[option.textKey]}}
+                          <label class="buttons" *ngFor="let item of data; let last = last">{{item[option.textKey]}}
                             <span class="deletes" (click)="delete(item) ">
                               <span>x</span>
                             </span>
                             <span *ngIf="data.length>1 && !last">,</span>
-                          </span>
+                          </label>
                         </ng-container>
                         <ng-template #numberTemplate>
                           {{data.length}} Selected
@@ -70704,7 +70703,7 @@ var DropdownComponent = /** @class */ (function () {
                       </div>
                     </div>
                   </div>
-                  </container>`
+                  `
                   ,
                     styles: [`/* The container */
                     .containers {
