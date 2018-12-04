@@ -167,7 +167,7 @@ module.exports = "\r\n\r\ndiv{\r\n\r\nwidth: 100%;\r\nbackground-color:#3f51b5;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"myDIV\">\n  <button class=\"btn active\" [routerLink]=\"['accordion']\">ACCORDIONS</button>\n\n  <button class=\"btn\" [routerLink]=\"['datepicker']\">DATEPICKERS</button>\n  <button class=\"btn\" [routerLink]=\"['autocompletesearch']\">AUTO COMPLETES</button>\n  <button class=\"btn\" [routerLink]=\"['multi-single-selectdropdown']\"> DROP-DOWNS</button>\n  <button class=\"btn\" [routerLink]=\"['table']\">TABLES</button>\n</div>\n<router-outlet></router-outlet>"
+module.exports = "<div id=\"myDIV\">\n  <button class=\"btn active\" [routerLink]=\"['accordion']\">ACCORDIONS</button>\n\n  <button class=\"btn\" [routerLink]=\"['datepicker']\">DATEPICKERS</button>\n  <button class=\"btn\" [routerLink]=\"['autocompletesearch']\">AUTO COMPLETES</button>\n  <button class=\"btn\" [routerLink]=\"['multi-single-selectdropdown']\"> DROP-DOWNS</button>\n  <button class=\"btn\" [routerLink]=\"['table']\">TABLES</button>\n</div>\n<router-outlet></router-outlet>\n\n<!-- <span class=\"buttons\" *ngFor=\"let item of data; let last = last\">{{item[option.textKey]}}\n  <span class=\"deletes\" (click)=\"delete(item) \">\n    <span>x</span>\n  </span>\n  <span *ngIf=\"data.length>1 && !last\">,</span>\n</span> -->"
 
 /***/ }),
 
