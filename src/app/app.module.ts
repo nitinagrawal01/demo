@@ -15,6 +15,7 @@ import { DatepickerComponent } from './datepicker/datepicker.component';
 import { MultiselectdropdownComponent } from './multiselectdropdown/multiselectdropdown.component';
 import { AccordianComponent } from './accordian/accordian.component';
 import { DynamictableComponent } from './dynamictable/dynamictable.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { DynamictableComponent } from './dynamictable/dynamictable.component';
     MultiselectdropdownComponent,
     AccordianComponent,
     DynamictableComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
